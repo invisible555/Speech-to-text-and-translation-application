@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj": {}
+    "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\ReactProject.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj": {
+    "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\ReactProject.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\ReactProject.Server.csproj",
         "projectName": "ReactProject.Server",
-        "projectPath": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj",
-        "packagesPath": "C:\\Users\\niewi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\ReactProject.Server.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\visual studio bonus\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\niewi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -68,6 +68,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -89,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

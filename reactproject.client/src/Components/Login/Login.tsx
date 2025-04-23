@@ -1,7 +1,7 @@
 
 function Login() {
     return (
-        <div>
+        <div className="container">
             Login: <input type="text" id="login" />
             Has³o: <input type="password" id="password"/>
         </div>

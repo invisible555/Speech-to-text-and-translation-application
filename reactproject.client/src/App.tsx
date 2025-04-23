@@ -5,7 +5,8 @@ import Login from "./Components/Login/Login"
 import Register from "./Components/Register/Register"
 import LoginButton from './Components/LoginButton/LoginButton';
 import RegisterButton from './Components/RegisterButton/RegisterButton';
-
+import { BrowserRouter as Router, Route,Routes, Link } from 'react-router-dom';
+//TODO routing instead of changing component
 function App() {
     const [forecasts, setForecasts] = useState();
     const [contents, setContents] = useState();
@@ -14,12 +15,12 @@ function App() {
 
         
     }, []);
-
+    /*
     const loginButtonHandler = () => {
       
         setContents(<Login />);
 
-    };
+    }*/
 
     const registerButtonHandler = () => {
 
@@ -28,17 +29,26 @@ function App() {
 
     };
 
-
     
     return (
         <div>
-            <LoginButton onClick={loginButtonHandler} />
+            <Router>
+                <nav>
+                    <Link to="/">Home </Link>
+                    <Link to="/login">Login</Link>
+                </nav>
+                <Routes>
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/" />
+                </Routes>       
+            </Router>
+            
             <RegisterButton onClick={registerButtonHandler } />
             <h1 id="tableLabel">Weather forecast</h1>
             <p>This component demonstrates fetching data from the server.</p>
-          
+     
             {contents}
-        </div>
+        </div>  
     );
     
     async function populateWeatherData() {

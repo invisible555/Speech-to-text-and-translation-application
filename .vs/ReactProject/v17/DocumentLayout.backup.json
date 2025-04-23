@@ -1,62 +1,70 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\niewi\\Desktop\\ReactProject\\",
+  "WorkspaceRootPath": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\src\\components\\register\\register.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\components\\register\\register.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\src\\components\\login\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\components\\login\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\src\\components\\registerbutton\\registerbutton.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\components\\registerbutton\\registerbutton.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\src\\interfaces\\iuser.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\interfaces\\iuser.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\src\\components\\loginbutton\\loginbutton.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\components\\loginbutton\\loginbutton.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\src\\styles\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\styles\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\src\\app.tsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\app.tsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\components\\login\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\components\\login\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\styles\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\styles\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\components\\register\\register.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\components\\register\\register.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\components\\registerbutton\\registerbutton.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\components\\registerbutton\\registerbutton.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\interfaces\\iuser.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\interfaces\\iuser.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\components\\loginbutton\\loginbutton.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\components\\loginbutton\\loginbutton.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\app.tsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\src\\app.tsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,118 +74,178 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Register.tsx",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\Components\\Register\\Register.tsx",
-              "RelativeDocumentMoniker": "reactproject.client\\src\\Components\\Register\\Register.tsx",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\Components\\Register\\Register.tsx",
-              "RelativeToolTip": "reactproject.client\\src\\Components\\Register\\Register.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-04-13T14:03:05.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RegisterButton.tsx",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\Components\\RegisterButton\\RegisterButton.tsx",
-              "RelativeDocumentMoniker": "reactproject.client\\src\\Components\\RegisterButton\\RegisterButton.tsx",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\Components\\RegisterButton\\RegisterButton.tsx",
-              "RelativeToolTip": "reactproject.client\\src\\Components\\RegisterButton\\RegisterButton.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-04-13T13:20:17.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoginButton.tsx",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\Components\\LoginButton\\LoginButton.tsx",
-              "RelativeDocumentMoniker": "reactproject.client\\src\\Components\\LoginButton\\LoginButton.tsx",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\Components\\LoginButton\\LoginButton.tsx",
-              "RelativeToolTip": "reactproject.client\\src\\Components\\LoginButton\\LoginButton.tsx",
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "ReactProject.Server\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "ReactProject.Server\\Controllers\\WeatherForecastController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-04-13T13:10:58.602Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Login.css",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\styles\\Login.css",
-              "RelativeDocumentMoniker": "reactproject.client\\src\\styles\\Login.css",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\styles\\Login.css",
-              "RelativeToolTip": "reactproject.client\\src\\styles\\Login.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-11T14:00:46.568Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T18:28:59.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "ReactProject.Server\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\AppDbContext.cs",
+              "RelativeToolTip": "ReactProject.Server\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T16:02:09.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "ReactProject.Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\appsettings.json",
+              "RelativeToolTip": "ReactProject.Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-21T16:01:36.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Login.tsx",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\Components\\Login\\Login.tsx",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\Components\\Login\\Login.tsx",
               "RelativeDocumentMoniker": "reactproject.client\\src\\Components\\Login\\Login.tsx",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\Components\\Login\\Login.tsx",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\Components\\Login\\Login.tsx",
               "RelativeToolTip": "reactproject.client\\src\\Components\\Login\\Login.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-04-10T17:12:19.64Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T17:12:19.64Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "IUser.ts",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\Interfaces\\IUser.ts",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\Interfaces\\IUser.ts",
               "RelativeDocumentMoniker": "reactproject.client\\src\\Interfaces\\IUser.ts",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\Interfaces\\IUser.ts",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\Interfaces\\IUser.ts",
               "RelativeToolTip": "reactproject.client\\src\\Interfaces\\IUser.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA+wAMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-04-10T17:12:05.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T17:12:05.576Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "App.tsx",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\App.tsx",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\App.tsx",
               "RelativeDocumentMoniker": "reactproject.client\\src\\App.tsx",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\App.tsx",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\App.tsx",
               "RelativeToolTip": "reactproject.client\\src\\App.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAADwPiQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-04-08T12:20:50.864Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Users.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Entities\\Users.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Entities\\Users.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Entities\\Users.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Entities\\Users.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Entities\\Users.cs",
               "RelativeToolTip": "ReactProject.Server\\Entities\\Users.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T16:56:30.31Z"
+              "WhenOpened": "2025-04-10T16:56:30.31Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Program.cs",
+              "RelativeDocumentMoniker": "ReactProject.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Program.cs",
+              "RelativeToolTip": "ReactProject.Server\\Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T11:08:53.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "ReactProject.Server\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\WeatherForecast.cs",
+              "RelativeToolTip": "ReactProject.Server\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T11:05:47.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.css",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\styles\\Login.css",
+              "RelativeDocumentMoniker": "reactproject.client\\src\\styles\\Login.css",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\styles\\Login.css",
+              "RelativeToolTip": "reactproject.client\\src\\styles\\Login.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-11T14:00:46.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginButton.tsx",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\Components\\LoginButton\\LoginButton.tsx",
+              "RelativeDocumentMoniker": "reactproject.client\\src\\Components\\LoginButton\\LoginButton.tsx",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\Components\\LoginButton\\LoginButton.tsx",
+              "RelativeToolTip": "reactproject.client\\src\\Components\\LoginButton\\LoginButton.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-04-13T13:10:58.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RegisterButton.tsx",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\Components\\RegisterButton\\RegisterButton.tsx",
+              "RelativeDocumentMoniker": "reactproject.client\\src\\Components\\RegisterButton\\RegisterButton.tsx",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\Components\\RegisterButton\\RegisterButton.tsx",
+              "RelativeToolTip": "reactproject.client\\src\\Components\\RegisterButton\\RegisterButton.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-04-13T13:20:17.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Register.tsx",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\Components\\Register\\Register.tsx",
+              "RelativeDocumentMoniker": "reactproject.client\\src\\Components\\Register\\Register.tsx",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\Components\\Register\\Register.tsx",
+              "RelativeToolTip": "reactproject.client\\src\\Components\\Register\\Register.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-04-13T14:03:05.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "package.json",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\package.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\package.json",
               "RelativeDocumentMoniker": "reactproject.client\\package.json",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\package.json",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\package.json",
               "RelativeToolTip": "reactproject.client\\package.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -185,47 +253,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Program.cs",
-              "RelativeDocumentMoniker": "ReactProject.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Program.cs",
-              "RelativeToolTip": "ReactProject.Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T11:08:53.74Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "ReactProject.Server\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "ReactProject.Server\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T11:05:50.33Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\WeatherForecast.cs",
-              "RelativeDocumentMoniker": "ReactProject.Server\\WeatherForecast.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\WeatherForecast.cs",
-              "RelativeToolTip": "ReactProject.Server\\WeatherForecast.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T11:05:47.399Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "main.tsx",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\main.tsx",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\main.tsx",
               "RelativeDocumentMoniker": "reactproject.client\\src\\main.tsx",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\main.tsx",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\main.tsx",
               "RelativeToolTip": "reactproject.client\\src\\main.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
@@ -233,11 +265,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "App.tsx",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\App.tsx",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\App.tsx",
               "RelativeDocumentMoniker": "reactproject.client\\src\\App.tsx",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\src\\App.tsx",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\src\\App.tsx",
               "RelativeToolTip": "reactproject.client\\src\\App.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
