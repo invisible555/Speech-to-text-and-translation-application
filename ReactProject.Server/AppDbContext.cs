@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ReactProject.Server.Entities;
 using ReactProject.Server.Model;
 
 namespace ReactProject.Server
@@ -9,6 +10,8 @@ namespace ReactProject.Server
         {
         }
         public DbSet<Users> Users { get; set; } = null!;
+        public DbSet<UserRefreshTokens> UserRefreshTokens { get; set; }
+        public DbSet<UserAccessTokens> UserAccessTokens { get; set; }
 
     }
 }

@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "QFAZHeWI2Oa6ZzjhWsbjeLTqqAsHPHwWE+wuYtOruvg=",
+  "Hash": "Vdr0k+QJUgR0NGpJuzdJQmVEv2YhF4LS2wqZtDA1n7E=",
   "Source": "ReactProject.Server",
   "BasePath": "_content/ReactProject.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\reactproject.client.esproj",
+      "Identity": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\reactproject.client.esproj",
       "Version": 2,
       "Source": "reactproject.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
@@ -18,7 +18,15 @@
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
     }
   ],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ReactProject.Server\\wwwroot",
+      "Source": "ReactProject.Server",
+      "ContentRoot": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\wwwroot\\",
+      "BasePath": "_content/ReactProject.Server",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }
