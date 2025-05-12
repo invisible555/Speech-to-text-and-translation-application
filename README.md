@@ -21,7 +21,7 @@ Przejdź do folderu  reactproject.client i uruchom frontend:
 
 cd reactproject.client
 
-npm install  
+npm install   # za pierwszym razem
 
 npm run dev
 
@@ -30,5 +30,7 @@ npm run dev
 W nowej zakładce terminala przejdź do folderu ReactProject.server i uruchom backend:
 
 cd ReactProject.server
+
+dotnet ef database update   # za pierwszym razem
 
 dotnet run
