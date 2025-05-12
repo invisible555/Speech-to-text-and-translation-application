@@ -14,6 +14,7 @@
 
 
 Instrukcja uruchomienia projektu
+
 **Frontend** (React):
 
 Przejdź do folderu  reactproject.client i uruchom frontend:
