@@ -1,0 +1,65 @@
+/* Ustaw navbar zawsze jako flex container */
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+/* Przy większych ekranach (lg i więcej) – upewnij się, że menu jest w jednej linii */
+@media (min-width: 992px) {
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 1rem;
+  }
+
+  /* Ukryj ikonę toggle na dużych ekranach */
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+/* Przy mniejszych ekranach – rozwijane menu */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    width: 250px;
+    z-index: 999;
+    padding: 1rem;
+    border-radius: 0 0 0 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 0.5rem;
+  }
+}
+.navbar-nav .nav-link {
+  color: #fff;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107; /* np. złoty */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.navbar {
+  transition: box-shadow 0.3s ease;
+}
+.navbar.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.navbar-toggler-icon.open {
+     background-color: #d66a6a;
+  background-image: url('/close_icon.png'); /* zmiana ikony */
+}

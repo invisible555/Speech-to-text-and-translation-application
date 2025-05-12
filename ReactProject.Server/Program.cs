@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ReactProject.Server.Repositories;
 using ReactProject.Server.Services;
+using System.Security.Claims;
 using System.Text;
 
 namespace ReactProject.Server
@@ -52,7 +53,9 @@ namespace ReactProject.Server
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUserTokenRepository, UserTokenRepository>();
-
+            builder.Services.AddScoped<IFileRepository, FileRepository>();
+            builder.Services.AddScoped<IFileService, FileService>();
+            builder.Services.AddScoped<IUserStorageService, UserStorageService>();
 
             builder.Services.AddAuthentication(options =>
             {
@@ -62,11 +65,14 @@ namespace ReactProject.Server
             {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(keyBytes)
+                    IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
+                    NameClaimType = ClaimTypes.Name,
+                    RoleClaimType = ClaimTypes.Role,
+      
                 };
             });
             builder.Services.AddControllers();

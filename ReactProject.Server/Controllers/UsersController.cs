@@ -9,17 +9,13 @@ using System.Security.Claims;
 [ApiController]
 public class UsersController : ControllerBase
 {
-    private readonly JwtService _jwtService;
+ 
     private readonly IUserService _userService;
     private readonly IWebHostEnvironment _env;
-    private readonly int _accessTokenLiveTime = 15;
-    private readonly int _refreshTokenLiveTime = 1;
 
-
-    public UsersController(IUserService userService, JwtService jwtService, IWebHostEnvironment env)
+    public UsersController(IUserService userService, IWebHostEnvironment env)
     {
         _userService = userService;
-        _jwtService = jwtService;
         _env = env;
       
     }
@@ -37,42 +33,21 @@ public class UsersController : ControllerBase
             return Unauthorized("Nieprawidłowy login lub hasło");
         }
         
-        var role = _user.User.Role;
-        if(role == null)
-        {
-            return Unauthorized("Błąd roli");
-        }
-        var id = _userService.GetUserId(User);
-        var accessToken = _jwtService.GenerateAccessToken(id,user.Login, role);
-        var refreshToken = _jwtService.GenerateRefreshToken();
-
-        if (_user.User.Id == null || accessToken == null || refreshToken == null)
-        {
-            return  Unauthorized("Błąd");
-        }
-        try
-        {
-            await _userService.SaveUserTokens(_user.User.Id, accessToken, refreshToken);
-        }
-        catch (Exception ex)
-        {
-            throw new Exception("Błąd w zapisie tokenów");
-        }
         return Ok(new
         {
-            _accessToken = accessToken,
-            _login = user.Login,
-            _tokenExpiredTime = accessToken
+            accessToken = _user.AccessToken,
+            login = user.Login,
+            tokenExpiredTime = _user.ExpiryTime,
         });
     }
 
     [HttpPost("register/user")]
     public async Task<IActionResult> RegisterUser([FromBody] RegisterRequest model)
     {
-        if (!ModelState.IsValid)
+       /* if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
-        }
+        }*/
 
         var result = await _userService.RegisterUser(model);
 
@@ -81,18 +56,9 @@ public class UsersController : ControllerBase
             return BadRequest(new { message = result.ErrorMessage });
         }
 
-        // Tworzenie katalogu użytkownika we wwwroot/UserData/{Login}
-        var userDir = Path.Combine(_env.WebRootPath, "UserData", result.User.Login);
-
-        if (!Directory.Exists(userDir))
-        {
-            Directory.CreateDirectory(userDir);
-        }
-
-
         return Ok(new
         {
-            message = "Udało się zalogować",
+            message = "Udało się zarejestrować",
         });
     }
     [Authorize]
@@ -102,25 +68,24 @@ public class UsersController : ControllerBase
         return Ok();
     }
 
-    [Authorize]
-    [HttpGet("getprofile")]
+    [Authorize(Roles ="user")]
+    [HttpGet("profile")]
     public IActionResult GetProfile()
     {
         var username = User.Identity?.Name;
         return Ok(new { username });
     }
     [Authorize]
-    [HttpGet("getrole")]
+    [HttpGet("role")]
     public IActionResult GetRoleByClaim()
     {
         var role = _userService.GetUserRole(User);
         return Ok(new { role });
     }
 
-
+    [HttpDelete("user")]
     public IActionResult DeleteUser()
     {
-
         return Ok();
     }
 }

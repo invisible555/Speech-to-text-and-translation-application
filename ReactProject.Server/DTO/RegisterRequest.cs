@@ -5,6 +5,7 @@ namespace ReactProject.Server.DTO
     public class RegisterRequest
     {
         [Required(ErrorMessage = "Login jest wymagany.")]
+        [MinLength(6, ErrorMessage = "Login musi mieć co najmniej 6 znaków.")]
         [RegularExpression(@"^[a-zA-Z0-9_-]+$", ErrorMessage = "Login może zawierać tylko litery, cyfry, myślnik i podkreślenie.")]
         public string Login { get; set; }
 

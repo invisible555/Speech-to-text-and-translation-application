@@ -1,0 +1,28 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/ReactProject.Server/UserData/hello.tpkx3qmxa6.txt">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\UserData\hello.txt'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"tpkx3qmxa6"},{"Name":"integrity","Value":"sha256-3\u002B1y50i5epXZK/HgZQr9aTh/cTvuiHUJS1KaasIBSaA="},{"Name":"label","Value":"_content/ReactProject.Server/UserData/hello.txt"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"22"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u00223\u002B1y50i5epXZK/HgZQr9aTh/cTvuiHUJS1KaasIBSaA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 10 May 2025 08:57:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ReactProject.Server/UserData/hello.txt">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\UserData\hello.txt'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-3\u002B1y50i5epXZK/HgZQr9aTh/cTvuiHUJS1KaasIBSaA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"22"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u00223\u002B1y50i5epXZK/HgZQr9aTh/cTvuiHUJS1KaasIBSaA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 10 May 2025 08:57:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ReactProject.Server/UserData/user1/moje1.vomztc6r5q.wav">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\UserData\user1\moje1.wav'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vomztc6r5q"},{"Name":"integrity","Value":"sha256-n2r4LZjxHSBmrg6\u002BFuSS63wrIEPCfbejqDnx53jAz14="},{"Name":"label","Value":"_content/ReactProject.Server/UserData/user1/moje1.wav"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"179322"},{"Name":"Content-Type","Value":"audio/wav"},{"Name":"ETag","Value":"\u0022n2r4LZjxHSBmrg6\u002BFuSS63wrIEPCfbejqDnx53jAz14=\u0022"},{"Name":"Last-Modified","Value":"Mon, 12 May 2025 14:05:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ReactProject.Server/UserData/user1/moje1.wav">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\UserData\user1\moje1.wav'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-n2r4LZjxHSBmrg6\u002BFuSS63wrIEPCfbejqDnx53jAz14="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"179322"},{"Name":"Content-Type","Value":"audio/wav"},{"Name":"ETag","Value":"\u0022n2r4LZjxHSBmrg6\u002BFuSS63wrIEPCfbejqDnx53jAz14=\u0022"},{"Name":"Last-Modified","Value":"Mon, 12 May 2025 14:05:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

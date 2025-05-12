@@ -1,35 +1,64 @@
 import React, { useState } from 'react';
-import ILogin from "./ILogin"
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../Context/AuthContext';
+import axios from 'axios';
 
-
-const Login: React.FC<ILogin> = ({ onSubmit }) => {
-
-    const [email, setEmail] = useState('');
+const Login = () => {
+    const [loginInput, setLoginInput] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const { login } = useAuth();
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        onSubmit({ email, password });
+        setError('');
+
+        try {
+            const response = await axios.post('http://localhost:5212/api/Users/login', {
+                login: loginInput,
+                password: password,
+            });
+
+            const data = response.data;
+            const token = data.accessToken;
+            const user = data.login;
+
+            if (token && user) {
+                login(token, user);
+                navigate('/');
+            } else {
+                throw new Error('Brak tokena w odpowiedzi serwera');
+            }
+        } catch (err: any) {
+            console.error(err);
+            setError('Wystąpił błąd podczas logowania');
+        }
     };
 
     return (
         <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
             <div className="card p-4 shadow w-100" style={{ maxWidth: '400px' }}>
                 <h3 className="mb-4 text-center">Logowanie</h3>
+
+                {/* Display error message */}
+                {error && <div className="alert alert-danger">{error}</div>}
+
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label className="form-label">Email:</label>
+                        <label className="form-label">Login</label>
                         <input
-                            type="email"
+                            type="text"
                             className="form-control"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            value={loginInput}
+                            onChange={(e) => setLoginInput(e.target.value)}
                             required
                         />
                     </div>
 
                     <div className="mb-3">
-                        <label className="form-label">Has�o:</label>
+                        <label className="form-label">Hasło</label>
                         <input
                             type="password"
                             className="form-control"
@@ -39,8 +68,8 @@ const Login: React.FC<ILogin> = ({ onSubmit }) => {
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-primary w-100">
-                        Zaloguj si�
+                    <button type="submit" className="btn btn-success w-100">
+                        Zaloguj się
                     </button>
                 </form>
             </div>

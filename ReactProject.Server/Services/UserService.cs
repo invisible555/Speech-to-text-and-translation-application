@@ -13,15 +13,17 @@ namespace ReactProject.Server.Services
         private readonly IUserTokenRepository _userTokenRepository;
         private readonly JwtService _jwtService;
         private readonly PasswordHasher<Users> _passwordHasher;
+        private readonly IUserStorageService _userStorageService;
         private readonly int _accessTokenLiveTime = 15;
         private readonly int _refreshTokenLiveTime = 1;
 
-        public UserService(IUserRepository userRepository, IUserTokenRepository userTokenRepository, JwtService jwtService)
+        public UserService(IUserRepository userRepository, IUserTokenRepository userTokenRepository, JwtService jwtService, IUserStorageService userStorageService)
         {
             _userRepository = userRepository;
             _userTokenRepository = userTokenRepository;
             _jwtService = jwtService;
             _passwordHasher = new PasswordHasher<Users>();
+            _userStorageService = userStorageService;
         }
 
         public async Task<AuthenticationResult?> Authenticate(string login, string password)
@@ -37,21 +39,21 @@ namespace ReactProject.Server.Services
 
             await _userTokenRepository.DeactivateAllTokensAsync(user.Id);
 
-            var accessToken = _jwtService.GenerateAccessToken(user.Id,user.Login, user.Role);
+            var accessToken = _jwtService.GenerateAccessToken(user.Id.ToString(),user.Login, user.Role);
             var refreshToken = _jwtService.GenerateRefreshToken();
 
             var accessTokenEntity = new UserAccessTokens
             {
                 UserId = user.Id,
                 Token = accessToken,
-                ExpiryDate = DateTime.UtcNow.AddMinutes(15),
+                ExpiryDate = DateTime.UtcNow.AddMinutes(_accessTokenLiveTime),
             };
 
             var refreshTokenEntity = new UserRefreshTokens
             {
                 UserId = user.Id,
                 Token = refreshToken,
-                ExpiryDate = DateTime.UtcNow.AddDays(1),
+                ExpiryDate = DateTime.UtcNow.AddDays(_refreshTokenLiveTime),
             };
             await _userTokenRepository.AddAccessTokenAsync(accessTokenEntity);
             await _userTokenRepository.AddRefreshTokenAsync(refreshTokenEntity);
@@ -60,7 +62,7 @@ namespace ReactProject.Server.Services
             {
                 Success = true,
                 AccessToken = accessToken,
-                RefreshToken = refreshToken,
+                ExpiryTime = accessTokenEntity.ExpiryDate,
                 User = user
             };
         }
@@ -90,7 +92,7 @@ namespace ReactProject.Server.Services
             {
                 await _userRepository.AddUserAsync(user);
                 await _userRepository.SaveChangesAsync();
-
+                await _userStorageService.CreateUserDirectoryAsync(user.Login);
                 return new RegisterResult { Success = true, User = user };
             }
             catch
@@ -108,13 +110,13 @@ namespace ReactProject.Server.Services
             await _userTokenRepository.SaveChangesAsync();
             return true;
         }
-
+        //?TODO
         public  string? GetUserRole(ClaimsPrincipal user)
         {
             var role = user.FindFirst(ClaimTypes.Role)?.Value;
             return role;
         }
-
+        //?TODO
         public string? GetUserId(ClaimsPrincipal user)
         {
             var id = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;

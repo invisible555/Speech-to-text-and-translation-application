@@ -12,6 +12,27 @@ namespace ReactProject.Server
         public DbSet<Users> Users { get; set; } = null!;
         public DbSet<UserRefreshTokens> UserRefreshTokens { get; set; }
         public DbSet<UserAccessTokens> UserAccessTokens { get; set; }
+        public DbSet<UserFile> UserFiles { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Relacja jeden-do-wielu: Users -> UserFile
+            modelBuilder.Entity<UserFile>()
+                .HasOne(f => f.User)
+                .WithMany(u => u.Files)
+                .HasForeignKey(f => f.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Opcjonalnie: ustawienia dla innych encji
+            modelBuilder.Entity<Users>()
+                .HasIndex(u => u.Login)
+                .IsUnique();
+
+            modelBuilder.Entity<Users>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+        }
     }
 }

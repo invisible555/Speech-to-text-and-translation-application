@@ -10,5 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\Components\LoginButton\" />
+    <Folder Include="src\Components\Navbar\NewFolder\" />
   </ItemGroup>
 </Project>

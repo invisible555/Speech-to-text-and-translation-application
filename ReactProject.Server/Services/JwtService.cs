@@ -42,20 +42,5 @@ public class JwtService
         return Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
     }
 
-    public ClaimsPrincipal? GetPrincipalFromExpiredToken(string token)
-    {
-        var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.UTF8.GetBytes(_config["Jwt:Key"]);
-        var tokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(key),
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = false // ważne — sprawdzamy wygasły token!
-        };
-
-        var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var securityToken);
-        return principal;
-    }
+   
 }

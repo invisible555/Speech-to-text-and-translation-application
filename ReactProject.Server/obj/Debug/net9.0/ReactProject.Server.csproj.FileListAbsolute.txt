@@ -563,3 +563,16 @@ C:\Users\niewi\Desktop\ReactProject\ReactProject.Server\bin\Debug\net9.0\Microso
 C:\Users\niewi\Desktop\ReactProject\ReactProject.Server\bin\Debug\net9.0\Swashbuckle.Core.dll
 C:\Users\niewi\Desktop\ReactProject\ReactProject.Server\bin\Debug\net9.0\WebActivatorEx.dll
 C:\Users\niewi\Desktop\ReactProject\ReactProject.Server\bin\Debug\net9.0\ReactProject.Server.staticwebassets.runtime.json
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\ReactProject.Server.staticwebassets.runtime.json
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\System.Net.Http.Formatting.dll
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\System.Web.Http.dll
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\System.Web.Http.WebHost.dll
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\Microsoft.Web.Infrastructure.dll
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\Swashbuckle.Core.dll
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\WebActivatorEx.dll
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\obj\Debug\net9.0\compressed\ze6gcvoixs-tpkx3qmxa6.gz
+C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\obj\Debug\net9.0\compressed\y8xv3pjx43-vomztc6r5q.gz
