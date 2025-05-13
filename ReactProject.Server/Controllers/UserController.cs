@@ -7,13 +7,13 @@ using System.Security.Claims;
 
 [Route("api/[controller]")]
 [ApiController]
-public class UsersController : ControllerBase
+public class UserController : ControllerBase
 {
  
     private readonly IUserService _userService;
     private readonly IWebHostEnvironment _env;
 
-    public UsersController(IUserService userService, IWebHostEnvironment env)
+    public UserController(IUserService userService, IWebHostEnvironment env)
     {
         _userService = userService;
         _env = env;
@@ -61,7 +61,7 @@ public class UsersController : ControllerBase
             message = "Udało się zarejestrować",
         });
     }
-    [Authorize]
+    [Authorize(Roles ="admin")]
     [HttpPost("register/admin")]
     public async Task<IActionResult> RegisterAdmin()
     {

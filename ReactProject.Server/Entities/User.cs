@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ReactProject.Server.Model
 {
-    public class Users
+    public class User
     {
         [Key]
         public int Id { get; set; }

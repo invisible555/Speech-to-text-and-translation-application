@@ -12,7 +12,7 @@ namespace ReactProject.Server.Services
         private readonly IUserRepository _userRepository;
         private readonly IUserTokenRepository _userTokenRepository;
         private readonly JwtService _jwtService;
-        private readonly PasswordHasher<Users> _passwordHasher;
+        private readonly PasswordHasher<User> _passwordHasher;
         private readonly IUserStorageService _userStorageService;
         private readonly int _accessTokenLiveTime = 15;
         private readonly int _refreshTokenLiveTime = 1;
@@ -22,7 +22,7 @@ namespace ReactProject.Server.Services
             _userRepository = userRepository;
             _userTokenRepository = userTokenRepository;
             _jwtService = jwtService;
-            _passwordHasher = new PasswordHasher<Users>();
+            _passwordHasher = new PasswordHasher<User>();
             _userStorageService = userStorageService;
         }
 
@@ -80,7 +80,7 @@ namespace ReactProject.Server.Services
                 return new RegisterResult { Success = false, ErrorMessage = "Email jest już używany." };
             }
 
-            var user = new Users
+            var user = new User
             {
                 Login = model.Login,
                 Email = model.Email,

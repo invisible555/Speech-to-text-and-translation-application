@@ -1,0 +1,15 @@
+.audio-file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.audio-file-list h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #222;
+}

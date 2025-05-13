@@ -9,7 +9,7 @@ namespace ReactProject.Server
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
-        public DbSet<Users> Users { get; set; } = null!;
+        public DbSet<User> User { get; set; } = null!;
         public DbSet<UserRefreshTokens> UserRefreshTokens { get; set; }
         public DbSet<UserAccessTokens> UserAccessTokens { get; set; }
         public DbSet<UserFile> UserFiles { get; set; }
@@ -18,7 +18,7 @@ namespace ReactProject.Server
         {
             base.OnModelCreating(modelBuilder);
 
-            // Relacja jeden-do-wielu: Users -> UserFile
+            // Relacja jeden-do-wielu: User -> UserFile
             modelBuilder.Entity<UserFile>()
                 .HasOne(f => f.User)
                 .WithMany(u => u.Files)
@@ -26,11 +26,11 @@ namespace ReactProject.Server
                 .OnDelete(DeleteBehavior.Cascade);
 
             // Opcjonalnie: ustawienia dla innych encji
-            modelBuilder.Entity<Users>()
+            modelBuilder.Entity<User>()
                 .HasIndex(u => u.Login)
                 .IsUnique();
 
-            modelBuilder.Entity<Users>()
+            modelBuilder.Entity<User>()
                 .HasIndex(u => u.Email)
                 .IsUnique();
         }

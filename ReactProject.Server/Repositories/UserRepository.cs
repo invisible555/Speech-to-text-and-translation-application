@@ -12,19 +12,19 @@ namespace ReactProject.Server.Repositories
             _context = context;
         }
 
-        public async Task<Users?> GetByLoginAsync(string login)
+        public async Task<User?> GetByLoginAsync(string login)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Login == login);
+            return await _context.User.FirstOrDefaultAsync(u => u.Login == login);
         }
 
-        public async Task<Users?> GetByEmailAsync(string email)
+        public async Task<User?> GetByEmailAsync(string email)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            return await _context.User.FirstOrDefaultAsync(u => u.Email == email);
         }
 
-        public async Task AddUserAsync(Users user)
+        public async Task AddUserAsync(User user)
         {
-            await _context.Users.AddAsync(user);
+            await _context.User.AddAsync(user);
         }
 
        
@@ -34,9 +34,9 @@ namespace ReactProject.Server.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Users?> GetByIdAsync(int id)
+        public async Task<User?> GetByIdAsync(int id)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+            return await _context.User.FirstOrDefaultAsync(u => u.Id == id);
         }
     }
 }

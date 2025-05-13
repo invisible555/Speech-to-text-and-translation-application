@@ -4,10 +4,13 @@ public class FileService : IFileService
 {
     private readonly string _storagePath;
     private readonly IWebHostEnvironment _env;
-    public FileService(IWebHostEnvironment env,IConfiguration configuration)
+    private readonly IUserStorageService _userStorageService;
+    public FileService(IWebHostEnvironment env,IConfiguration configuration, IUserStorageService userStorageService)
     { 
-        _storagePath = configuration["StoragePath"] ?? Path.Combine(env.ContentRootPath, "App_Data", "UserFiles");
+        
         _env = env;
+        _userStorageService = userStorageService;
+        _storagePath = _userStorageService.GetStoragePath();
     }
 
     // Zapisanie pliku do systemu
@@ -21,7 +24,7 @@ public class FileService : IFileService
         // Jeśli folder użytkownika nie istnieje, tworzymy go
         if (!Directory.Exists(userFolderPath))
         {
-            Directory.CreateDirectory(userFolderPath);
+            await _userStorageService.CreateUserDirectoryAsync(username);
         }
 
         var filePath = Path.Combine(userFolderPath, file.FileName);
@@ -61,16 +64,6 @@ public class FileService : IFileService
 
         return files;
     }
-    public void CreateUserDirectoryAsync(string username)
-    {
-        var userFolderPath = Path.Combine(_storagePath, username);
-
-        if (!Directory.Exists(userFolderPath))
-        {
-            Directory.CreateDirectory(userFolderPath);
-        }
-
-         // Metoda jest async, żeby była spójna, ale operacja jest synchroniczna
-    }
+    
 
 }

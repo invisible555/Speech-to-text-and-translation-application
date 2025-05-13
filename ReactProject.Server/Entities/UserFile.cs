@@ -8,7 +8,7 @@ namespace ReactProject.Server.Entities
 
         // RELACJA z użytkownikiem (wiele plików należy do jednego użytkownika)
         public int UserId { get; set; }
-        public Users User { get; set; } = null!;
+        public User User { get; set; } = null!;
 
 
         public string FileName { get; set; } = null!;   // Np. "plik1.wav"

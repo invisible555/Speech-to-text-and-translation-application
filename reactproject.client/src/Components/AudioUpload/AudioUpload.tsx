@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axiosInstance from '../../../utils/axiosConfig';  // Zaimportuj axiosInstance z pliku, w którym masz skonfigurowane interceptory
-
+import AudioFileList from '../AudioFileList/AudioFileList'; 
 const AudioUpload: React.FC = () => {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [uploading, setUploading] = useState(false);
@@ -46,7 +46,7 @@ const AudioUpload: React.FC = () => {
             </button>
             {message && <p>{message}</p>}
 
-            <div>Lista plików:</div>
+            <div> <AudioFileList/></div>
         </div>
         
     );

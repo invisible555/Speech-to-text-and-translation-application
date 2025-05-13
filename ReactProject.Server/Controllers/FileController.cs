@@ -48,8 +48,9 @@ public class FileController : ControllerBase
 
         try
         {
-            var fileStream =  _fileService.GetFile(username, fileName);
-            return File(fileStream, "application/octet-stream", fileName);
+            var fileStream = _fileService.GetFile(username, fileName);
+            var contentType = GetContentType(fileName);
+            return File(fileStream, contentType, fileName);
         }
         catch (FileNotFoundException)
         {
@@ -66,6 +67,26 @@ public class FileController : ControllerBase
 
         var files = _fileService.GetUserFiles(username);
 
-        return Ok(files); // Zwróci listę np. ["plik1.pdf", "dokument.png"]
+        return Ok(files); 
+    }
+    private string GetContentType(string fileName)
+    {
+        var extension = Path.GetExtension(fileName).ToLowerInvariant();
+
+        return extension switch
+        {
+            ".txt" => "text/plain",
+            ".json" => "application/json",
+            ".csv" => "text/csv",
+            ".pdf" => "application/pdf",
+            ".mp3" => "audio/mpeg",
+            ".wav" => "audio/wav",
+            ".mp4" => "video/mp4",
+            ".jpg" or ".jpeg" => "image/jpeg",
+            ".png" => "image/png",
+            ".gif" => "image/gif",
+            ".html" => "text/html",
+            _ => "application/octet-stream" 
+        };
     }
 }

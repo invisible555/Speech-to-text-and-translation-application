@@ -574,5 +574,3 @@ C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\ne
 C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\Swashbuckle.Core.dll
 C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\bin\Debug\net9.0\WebActivatorEx.dll
-C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\obj\Debug\net9.0\compressed\ze6gcvoixs-tpkx3qmxa6.gz
-C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\obj\Debug\net9.0\compressed\y8xv3pjx43-vomztc6r5q.gz

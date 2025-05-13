@@ -4,10 +4,10 @@ namespace ReactProject.Server.Repositories
 {
     public interface IUserRepository
     {
-        Task<Users?> GetByLoginAsync(string login);
-        Task<Users?> GetByIdAsync(int id);
-        Task<Users?> GetByEmailAsync(string email);
-        Task AddUserAsync(Users user);
+        Task<User?> GetByLoginAsync(string login);
+        Task<User?> GetByIdAsync(int id);
+        Task<User?> GetByEmailAsync(string email);
+        Task AddUserAsync(User user);
         Task SaveChangesAsync();
     }
 }

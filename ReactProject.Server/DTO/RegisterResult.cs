@@ -6,6 +6,6 @@ namespace ReactProject.Server.DTO
     {
         public bool Success { get; set; }
         public string? ErrorMessage { get; set; }
-        public Users? User {  get; set; }
+        public User? User {  get; set; }
     }
 }
