@@ -25,7 +25,7 @@ const AudioUpload: React.FC = () => {
 
         setUploading(true);
         try {
-            const response = await axiosInstance.post('http://localhost:5212/api/File/upload', formData);
+            const response = await axiosInstance.post('File/upload', formData);
 
             setMessage("Plik został pomyślnie przesłany!");
             console.log(response)

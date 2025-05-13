@@ -3,8 +3,9 @@ import { useAuth } from '../src/Context/AuthContext';  // Upewnij się, że masz
 
 
 
+
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:5212/api/',  // Zmienna do podstawowego URL API
+  baseURL: 'https://localhost:7260/api/',  // Zmienna do podstawowego URL API
   
 });
 
@@ -28,7 +29,7 @@ axiosInstance.interceptors.response.use(
   (error) => {
     if (error.response && error.response.status === 401) {
       // Jeśli błąd to 401 (Unauthorized), przekieruj do logowania
-      const { logout, navigateToLogin } = useAuth();
+     // const { logout, navigateToLogin } = useAuth();
       //logout(); // Wyloguj użytkownika
       //navigateToLogin();
        // Przekierowanie do strony logowania

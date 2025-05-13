@@ -1,74 +1,61 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../../../utils/axiosConfig';
 import RegisterType from './RegisterType';
 
 const Register: React.FC<RegisterType> = () => {
     const [email, setEmail] = useState('');
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessages, setErrorMessages] = useState<string[]>([]);
     const [successMessage, setSuccessMessage] = useState('');
 
-    const validateEmail = (email: string) => {
-        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return re.test(email);
-    };
-
-    const validateLogin = (login: string) => {
-        return login.length >= 3;
-    };
-
-    const validatePassword = (password: string) => {
-        return password.length >= 6;
-    };
+    const validateEmail = (email: string) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+    const validateLogin = (login: string) => login.length >= 3;
+    const validatePassword = (password: string) => password.length >= 6;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!validateEmail(email)) {
-            setErrorMessage('Proszę podać poprawny adres email!');
+        const localErrors = [];
+        if (!validateEmail(email)) localErrors.push('Proszę podać poprawny adres email!');
+        if (!validateLogin(login)) localErrors.push('Login musi mieć co najmniej 3 znaki!');
+        if (!validatePassword(password)) localErrors.push('Hasło musi mieć co najmniej 6 znaków!');
+
+        if (localErrors.length > 0) {
+            setErrorMessages(localErrors);
             return;
         }
 
-        if (!validateLogin(login)) {
-            setErrorMessage('Login musi mieć co najmniej 3 znaki!');
-            return;
-        }
-
-        if (!validatePassword(password)) {
-            setErrorMessage('Hasło musi mieć co najmniej 6 znaków!');
-            return;
-        }
-
-        setErrorMessage('');  // Reset error message
+        setErrorMessages([]); // Reset błędów
 
         try {
-            // Send registration data to backend
-            const response = await axios.post('http://localhost:5212/api/Users/register/user', {
-             
+            const response = await axiosInstance.post('User/register/user', {
                 login,
                 email,
                 password,
             });
 
-            // Handle successful registration
             if (response.status === 200) {
-                setSuccessMessage('Rejestracja zakończona sukcesem! Proszę zalogować się.');
+                setSuccessMessage('Rejestracja zakończona sukcesem! Proszę się zalogować.');
                 setEmail('');
                 setLogin('');
                 setPassword('');
             }
         } catch (error: any) {
-            // Handle errors
             if (error.response) {
-                // Server responded with a status other than 2xx
-                setErrorMessage(error.response.data.message || 'Błąd rejestracji');
+                const data = error.response.data;
+
+                if (data.errors) {
+                    // Zbierz wszystkie błędy walidacyjne z backendu
+                    const backendErrors = Object.values(data.errors).flat() as string[];
+                    setErrorMessages(backendErrors);
+                } else {
+                    setErrorMessages([data.title || 'Błąd rejestracji']);
+                }
             } else if (error.request) {
-                // Request was made but no response was received
-                setErrorMessage('Brak odpowiedzi z serwera');
+                setErrorMessages(['Brak odpowiedzi z serwera']);
             } else {
-                // Something else happened while setting up the request
-                setErrorMessage('Wystąpił błąd podczas próby rejestracji');
+                setErrorMessages(['Wystąpił błąd podczas próby rejestracji']);
             }
         }
     };
@@ -78,11 +65,19 @@ const Register: React.FC<RegisterType> = () => {
             <div className="card p-4 shadow w-100" style={{ maxWidth: '400px' }}>
                 <h3 className="mb-4 text-center">Rejestracja</h3>
 
-                {/* Display success message */}
-                {successMessage && <div className="alert alert-success">{successMessage}</div>}
+                {successMessage && (
+                    <div className="alert alert-success">{successMessage}</div>
+                )}
 
-                {/* Display error message */}
-                {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+                {errorMessages.length > 0 && (
+                    <div className="alert alert-danger">
+                        <ul className="mb-0">
+                            {errorMessages.map((msg, index) => (
+                                <li key={index}>{msg}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
 
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
