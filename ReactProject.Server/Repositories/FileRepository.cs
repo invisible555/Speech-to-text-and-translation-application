@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ReactProject.Server.Entities;
+using ReactProject.Server.Model;
 
 namespace ReactProject.Server.Repositories
 {
@@ -23,10 +24,16 @@ namespace ReactProject.Server.Repositories
 
             return path;
         }
-        public async Task SaveFileToDatabaseAsync(UserFile userFile)
+        
+
+        public async Task SaveFileMetadataAsync(UserFile userFile)
         {
-            _dbContext.UserFiles.Add(userFile);
+            if (userFile == null)
+                throw new ArgumentNullException(nameof(userFile));
+            await _dbContext.UserFiles.AddAsync(userFile);
             await _dbContext.SaveChangesAsync();
         }
+
+
     }
 }

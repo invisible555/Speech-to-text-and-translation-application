@@ -14,7 +14,7 @@ public class FileController : ControllerBase
         _fileService = fileService;
     }
 
-    // Endpoint do zapisywania plików
+   
     [Authorize]
     [HttpPost("upload")]
     public async Task<IActionResult> UploadFile(IFormFile file)
@@ -37,8 +37,8 @@ public class FileController : ControllerBase
         }
     }
 
-    // Endpoint do pobierania plików
-    [Authorize]
+  
+  //  [Authorize]
     [HttpGet("download/{fileName}")]
     public  IActionResult DownloadFile(string fileName)
     {
@@ -48,7 +48,7 @@ public class FileController : ControllerBase
 
         try
         {
-            var fileStream = _fileService.GetFile(username, fileName);
+            var fileStream = _fileService.GetFile(username, Path.GetFileName(fileName));
             var contentType = GetContentType(fileName);
             return File(fileStream, contentType, fileName);
         }

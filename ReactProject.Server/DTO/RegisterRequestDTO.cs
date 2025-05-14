@@ -2,7 +2,7 @@
 
 namespace ReactProject.Server.DTO
 {
-    public class RegisterRequest
+    public class RegisterRequestDTO
     {
         [Required(ErrorMessage = "Login jest wymagany.")]
         [MinLength(6, ErrorMessage = "Login musi mieć co najmniej 6 znaków.")]

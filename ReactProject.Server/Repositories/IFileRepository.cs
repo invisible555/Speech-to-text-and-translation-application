@@ -5,7 +5,8 @@ namespace ReactProject.Server.Repositories
     public interface IFileRepository
     {
 
-        Task<string> SaveFileToDiskAsync(IFormFile file, string path);
-        Task SaveFileToDatabaseAsync(UserFile userFile);
+        Task<string> SaveFileToDiskAsync(IFormFile file, string filePath);
+        Task SaveFileMetadataAsync(UserFile userFile);
     }
+
 }

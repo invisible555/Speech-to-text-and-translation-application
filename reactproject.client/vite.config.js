@@ -58,5 +58,12 @@ export default defineConfig({
             key: fs.readFileSync(keyFilePath),
             cert: fs.readFileSync(certFilePath),
         }
+        
+    },
+     define: {
+        'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL || 'https://localhost:7260/api/')
     }
+
 })
+
+  

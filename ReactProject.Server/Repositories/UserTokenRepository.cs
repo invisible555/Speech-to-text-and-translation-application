@@ -6,31 +6,31 @@ namespace ReactProject.Server.Repositories
 {
     public class UserTokenRepository :IUserTokenRepository
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext _dbContext;
 
-        public UserTokenRepository(AppDbContext context)
+        public UserTokenRepository(AppDbContext dbContext)
         {
-            _context = context;
+            _dbContext = dbContext;
         }
 
         public async Task AddAccessTokenAsync(UserAccessTokens token)
         {
-            await  _context.UserAccessTokens.AddAsync(token);
+            await  _dbContext.UserAccessTokens.AddAsync(token);
         }
 
         public async Task AddRefreshTokenAsync(UserRefreshTokens token)
         {
-            await _context.UserRefreshTokens.AddAsync(token);
+            await _dbContext.UserRefreshTokens.AddAsync(token);
         }
 
         public async Task<UserRefreshTokens?> GetRefreshTokenAsync(string token)
         {
-          return  await _context.UserRefreshTokens.FirstOrDefaultAsync(t => t.Token == token && t.IsActive);
+          return  await _dbContext.UserRefreshTokens.FirstOrDefaultAsync(t => t.Token == token && t.IsActive);
         }
 
         public async Task<UserAccessTokens?> GetAccessTokenAsync(string token)
         {
-           return await _context.UserAccessTokens.FirstOrDefaultAsync(t => t.Token == token && t.IsActive);   
+           return await _dbContext.UserAccessTokens.FirstOrDefaultAsync(t => t.Token == token && t.IsActive);   
         }
         
 
@@ -45,13 +45,13 @@ namespace ReactProject.Server.Repositories
 
         public async Task DeactivateAllTokensAsync(int userId)
         {
-            var tokens = await _context.UserAccessTokens.Where(t => t.UserId == userId).ToListAsync();
+            var tokens = await _dbContext.UserAccessTokens.Where(t => t.UserId == userId).ToListAsync();
             foreach (var t in tokens)
             {
                 t.IsRevoked = true;
             }
 
-            var refresh = await _context.UserRefreshTokens.Where(t => t.UserId == userId).ToListAsync();
+            var refresh = await _dbContext.UserRefreshTokens.Where(t => t.UserId == userId).ToListAsync();
             foreach (var t in refresh)
             {
                 t.IsRevoked = true;
@@ -60,7 +60,7 @@ namespace ReactProject.Server.Repositories
 
         public async Task SaveChangesAsync()
         {
-            await _context.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

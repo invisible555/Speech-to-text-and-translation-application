@@ -1,7 +1,6 @@
 interface AudioFileType {
-  id: string;
-  name: string;
+  fileName: string;
   url: string;
-}
+};
 
-export default AudioFileType
+export default AudioFileType;

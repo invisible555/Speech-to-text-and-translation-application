@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../../utils/axiosConfig';
-import AudioFileType from './AudioFileListType';
-import AudioFileItem from "../AudioFileItem/AudioFileItem" 
+import AudioFileType from '../AudioFileList/AudioFileListType';
+import AudioFileItem from "../AudioFileItem/AudioFileItem";
 import './AudioFileList.css';
-
 
 const AudioFileList: React.FC = () => {
   const [files, setFiles] = useState<AudioFileType[]>([]);
@@ -12,7 +11,12 @@ const AudioFileList: React.FC = () => {
     const fetchFiles = async () => {
       try {
         const response = await axiosInstance.get<AudioFileType[]>('/File/files');
-        setFiles(response.data);
+
+         const filesWithUrls = response.data.map((file) => ({
+          ...file,
+          url: `File/download/${file.fileName}`, 
+        }));
+        setFiles(filesWithUrls);
       } catch (error) {
         console.error('Błąd pobierania plików:', error);
       }
@@ -22,12 +26,12 @@ const AudioFileList: React.FC = () => {
   }, []);
 
   return (
-     <div className="audio-file-list">
-    <h2>Lista plików audio</h2>
-    {files.map(file => (
-      <AudioFileItem key={file.id} file={file} />
-    ))}
-  </div>
+    <div className="audio-file-list">
+      <h2>Lista plików audio</h2>
+      {files.map(file => (
+        <AudioFileItem key={file.fileName} file={file} />
+      ))}
+    </div>
   );
 };
 

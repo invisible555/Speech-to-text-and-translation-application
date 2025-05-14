@@ -26,15 +26,15 @@ namespace ReactProject.Server.Services
             _userStorageService = userStorageService;
         }
 
-        public async Task<AuthenticationResult?> Authenticate(string login, string password)
+        public async Task<AuthenticationResultDTO?> Authenticate(string login, string password)
         {
             var user = await _userRepository.GetByLoginAsync(login);
-            if (user == null) return new AuthenticationResult { Success = false, ErrorMessage = "Nieprawidłowy login lub hasło." }; ;
+            if (user == null) return new AuthenticationResultDTO { Success = false, ErrorMessage = "Nieprawidłowy login lub hasło." }; ;
 
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, password);
             if (result != PasswordVerificationResult.Success)
             {
-                return new AuthenticationResult { Success = false, ErrorMessage = "Nieprawidłowy login lub hasło." };
+                return new AuthenticationResultDTO { Success = false, ErrorMessage = "Nieprawidłowy login lub hasło." };
             }
 
             await _userTokenRepository.DeactivateAllTokensAsync(user.Id);
@@ -58,7 +58,7 @@ namespace ReactProject.Server.Services
             await _userTokenRepository.AddAccessTokenAsync(accessTokenEntity);
             await _userTokenRepository.AddRefreshTokenAsync(refreshTokenEntity);
             await _userTokenRepository.SaveChangesAsync();
-            return new AuthenticationResult
+            return new AuthenticationResultDTO
             {
                 Success = true,
                 AccessToken = accessToken,
@@ -68,16 +68,16 @@ namespace ReactProject.Server.Services
         }
 
 
-        public async Task<RegisterResult> RegisterUser(RegisterRequest model)
+        public async Task<RegisterResultDTO> RegisterUser(RegisterRequestDTO model)
         {
             if (await _userRepository.GetByLoginAsync(model.Login) != null)
             {
-                return new RegisterResult { Success = false, ErrorMessage = "Login jest zajęty." };
+                return new RegisterResultDTO { Success = false, ErrorMessage = "Login jest zajęty." };
             }
 
             if (await _userRepository.GetByEmailAsync(model.Email) != null)
             {
-                return new RegisterResult { Success = false, ErrorMessage = "Email jest już używany." };
+                return new RegisterResultDTO { Success = false, ErrorMessage = "Email jest już używany." };
             }
 
             var user = new User
@@ -93,11 +93,11 @@ namespace ReactProject.Server.Services
                 await _userRepository.AddUserAsync(user);
                 await _userRepository.SaveChangesAsync();
                 await _userStorageService.CreateUserDirectoryAsync(user.Login);
-                return new RegisterResult { Success = true, User = user };
+                return new RegisterResultDTO { Success = true, User = user };
             }
             catch
             {
-                return new RegisterResult
+                return new RegisterResultDTO
                 {
                     Success = false,
                     ErrorMessage = "Wystąpił błąd podczas rejestracji."

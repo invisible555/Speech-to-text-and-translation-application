@@ -11,9 +11,9 @@
         }
 
 
-        public Task CreateUserDirectoryAsync(string username)
+        public Task CreateUserDirectoryAsync(string login)
         {
-            var path = Path.Combine(_storagePath, username);
+            var path = Path.Combine(_storagePath, login);
 
             Directory.CreateDirectory(path);
 

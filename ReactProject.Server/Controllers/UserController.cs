@@ -20,7 +20,7 @@ public class UserController : ControllerBase
       
     }
     [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginRequest user)
+    public async Task<IActionResult> Login([FromBody] LoginRequestDTO user)
     {
         if (!ModelState.IsValid)
         {
@@ -42,7 +42,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPost("register/user")]
-    public async Task<IActionResult> RegisterUser([FromBody] RegisterRequest model)
+    public async Task<IActionResult> RegisterUser([FromBody] RegisterRequestDTO model)
     {
        /* if (!ModelState.IsValid)
         {
@@ -68,7 +68,7 @@ public class UserController : ControllerBase
         return Ok();
     }
 
-    [Authorize(Roles ="user")]
+    [Authorize(Roles ="user,admin")]
     [HttpGet("profile")]
     public IActionResult GetProfile()
     {

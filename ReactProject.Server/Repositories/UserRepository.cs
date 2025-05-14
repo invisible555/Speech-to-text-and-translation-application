@@ -5,38 +5,39 @@ namespace ReactProject.Server.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext _dbContext;
 
-        public UserRepository(AppDbContext context)
+        public UserRepository(AppDbContext dbContext)
         {
-            _context = context;
+            _dbContext = dbContext;
         }
 
         public async Task<User?> GetByLoginAsync(string login)
         {
-            return await _context.User.FirstOrDefaultAsync(u => u.Login == login);
+            return await _dbContext.User.FirstOrDefaultAsync(u => u.Login == login);
+            
         }
 
         public async Task<User?> GetByEmailAsync(string email)
         {
-            return await _context.User.FirstOrDefaultAsync(u => u.Email == email);
+            return await _dbContext.User.FirstOrDefaultAsync(u => u.Email == email);
         }
 
         public async Task AddUserAsync(User user)
         {
-            await _context.User.AddAsync(user);
+            await _dbContext.User.AddAsync(user);
         }
 
        
 
         public async Task SaveChangesAsync()
         {
-            await _context.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<User?> GetByIdAsync(int id)
         {
-            return await _context.User.FirstOrDefaultAsync(u => u.Id == id);
+            return await _dbContext.User.FirstOrDefaultAsync(u => u.Id == id);
         }
     }
 }

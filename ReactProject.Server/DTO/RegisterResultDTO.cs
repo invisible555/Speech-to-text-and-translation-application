@@ -2,7 +2,7 @@
 
 namespace ReactProject.Server.DTO
 {
-    public class RegisterResult
+    public class RegisterResultDTO
     {
         public bool Success { get; set; }
         public string? ErrorMessage { get; set; }

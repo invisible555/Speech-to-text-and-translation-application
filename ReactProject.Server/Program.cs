@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using ReactProject.Server.Repositories;
 using ReactProject.Server.Services;
 using System.Security.Claims;
@@ -16,13 +17,43 @@ namespace ReactProject.Server
             var builder = WebApplication.CreateBuilder(args);
 
             // === Add Services ===
-       
+
             // Controllers
-      
+
 
             // Swagger / OpenAPI
-            builder.Services.AddSwaggerGen(); // <-- To dodaj, jeœli jeszcze tego nie masz
-          
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "ReactProject API", Version = "v1" });
+
+                // Dodaj definicjê schematu JWT
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "WprowadŸ token JWT poprzedzony s³owem 'Bearer', np: **Bearer eyJhbGciOiJIUzI1...**",
+                });
+
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Id = "Bearer",
+                    Type = ReferenceType.SecurityScheme
+                }
+            },
+            new List<string>()
+                    }
+                });
+            });
+
             // EF Core - Database
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -30,13 +61,19 @@ namespace ReactProject.Server
             // CORS
             builder.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy(policy =>
-                {
-                    policy.WithOrigins("https://localhost:55071") // frontend URL
-                          .AllowAnyHeader()
-                          .AllowAnyMethod();
-                });
+                options.AddPolicy("AllowFrontend",
+                    policy =>
+                    {
+                        policy
+                            .WithOrigins("https://localhost:55071") // Twój frontend
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials(); // Jeœli u¿ywasz cookies
+                    });
             });
+
+         
+
 
             // Custom model validation response
             builder.Services.Configure<ApiBehaviorOptions>(options =>
@@ -88,8 +125,8 @@ namespace ReactProject.Server
             }
 
             app.UseHttpsRedirection();
-
-            app.UseCors();             // CORS
+            app.UseCors("AllowFrontend");
+             // CORS
             app.UseAuthentication();   // JWT
             app.UseAuthorization();    // Role-based or claims-based auth
 

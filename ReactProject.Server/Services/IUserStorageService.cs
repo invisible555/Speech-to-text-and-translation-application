@@ -3,6 +3,6 @@
     public interface IUserStorageService
     {
         string GetStoragePath();
-        Task CreateUserDirectoryAsync(string username);
+        Task CreateUserDirectoryAsync(string login);
     }
 }

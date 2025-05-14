@@ -2,7 +2,7 @@
 
 namespace ReactProject.Server.DTO
 {
-    public class AuthenticationResult
+    public class AuthenticationResultDTO
     {
         public bool Success { get; set; }
         public string? AccessToken { get; set; }
