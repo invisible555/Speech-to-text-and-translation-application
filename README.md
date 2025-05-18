@@ -34,3 +34,15 @@ cd ReactProject.server
 dotnet ef database update   # za pierwszym razem
 
 dotnet run
+
+**Python**
+
+Wymaga ffmpeg
+
+W zakładce należy przejść do python_model i uruchomić:
+
+cd python_model
+
+pip install -r requirements.txt
+
+uvicorn main:app --reload
