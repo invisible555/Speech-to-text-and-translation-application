@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+Ôªøusing Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -19,14 +19,18 @@ namespace ReactProject.Server
             // === Add Services ===
 
             // Controllers
-
+            builder.Services.AddHttpClient("TranscriptionApi", client =>
+            {
+                client.BaseAddress = new Uri("http://127.0.0.1:8000/");   // ‚Üê Tw√≥j sta≈Çy host
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+            });
 
             // Swagger / OpenAPI
             builder.Services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "ReactProject API", Version = "v1" });
 
-                // Dodaj definicjÍ schematu JWT
+                // Dodaj definicjƒô schematu JWT
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -34,7 +38,7 @@ namespace ReactProject.Server
                     Scheme = "bearer",
                     BearerFormat = "JWT",
                     In = ParameterLocation.Header,
-                    Description = "Wprowadü token JWT poprzedzony s≥owem 'Bearer', np: **Bearer eyJhbGciOiJIUzI1...**",
+                    Description = "Wprowad≈∫ token JWT poprzedzony s≈Çowem 'Bearer', np: **Bearer eyJhbGciOiJIUzI1...**",
                 });
 
 
@@ -65,10 +69,10 @@ namespace ReactProject.Server
                     policy =>
                     {
                         policy
-                            .WithOrigins("https://localhost:55071") // TwÛj frontend
+                            .WithOrigins("https://localhost:55071") // Tw√≥j frontend
                             .AllowAnyHeader()
                             .AllowAnyMethod()
-                            .AllowCredentials(); // Jeúli uøywasz cookies
+                            .AllowCredentials(); // Je≈õli u≈ºywasz cookies
                     });
             });
 
@@ -93,6 +97,7 @@ namespace ReactProject.Server
             builder.Services.AddScoped<IFileRepository, FileRepository>();
             builder.Services.AddScoped<IFileService, FileService>();
             builder.Services.AddScoped<IUserStorageService, UserStorageService>();
+            builder.Services.AddTransient<IFileService,FileService>();
 
             builder.Services.AddAuthentication(options =>
             {
@@ -120,7 +125,7 @@ namespace ReactProject.Server
 
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger(); // <-- Dodajemy Swagger do úrodowiska deweloperskiego
+                app.UseSwagger(); // <-- Dodajemy Swagger do ≈õrodowiska deweloperskiego
                 app.UseSwaggerUI(); // <-- Dodajemy UI Swaggera
             }
 

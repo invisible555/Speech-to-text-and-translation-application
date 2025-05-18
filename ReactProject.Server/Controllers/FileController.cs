@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using ReactProject.Server.Model;
 using ReactProject.Server.Services;
 
@@ -14,7 +15,7 @@ public class FileController : ControllerBase
         _fileService = fileService;
     }
 
-   
+
     [Authorize]
     [HttpPost("upload")]
     public async Task<IActionResult> UploadFile(IFormFile file)
@@ -29,6 +30,7 @@ public class FileController : ControllerBase
         try
         {
             var savedPath = await _fileService.SaveUserFileAsync(file, username);
+
             return Ok(new { path = savedPath });
         }
         catch (InvalidOperationException ex)
@@ -37,29 +39,10 @@ public class FileController : ControllerBase
         }
     }
 
-  
-  //  [Authorize]
-    [HttpGet("download/{fileName}")]
-    public  IActionResult DownloadFile(string fileName)
-    {
-        var username = User.Identity?.Name;
-        if (string.IsNullOrEmpty(username))
-            return Unauthorized();
 
-        try
-        {
-            var fileStream = _fileService.GetFile(username, Path.GetFileName(fileName));
-            var contentType = GetContentType(fileName);
-            return File(fileStream, contentType, fileName);
-        }
-        catch (FileNotFoundException)
-        {
-            return NotFound("Plik nie został znaleziony.");
-        }
-    }
     [Authorize]
     [HttpGet("files")]
-    public  IActionResult GetUserFiles()
+    public IActionResult GetUserFiles()
     {
         var username = User.Identity?.Name;
         if (string.IsNullOrEmpty(username))
@@ -67,26 +50,46 @@ public class FileController : ControllerBase
 
         var files = _fileService.GetUserFiles(username);
 
-        return Ok(files); 
+        return Ok(files);
     }
-    private string GetContentType(string fileName)
-    {
-        var extension = Path.GetExtension(fileName).ToLowerInvariant();
 
-        return extension switch
+    [Authorize]
+    [HttpGet("download/file/{fileName}")]
+    public IActionResult DownloadTypedFile(string fileName) 
+    {
+        var username = User.Identity?.Name;
+        if (string.IsNullOrEmpty(username))
+            return Unauthorized();
+
+        try
         {
-            ".txt" => "text/plain",
-            ".json" => "application/json",
-            ".csv" => "text/csv",
-            ".pdf" => "application/pdf",
-            ".mp3" => "audio/mpeg",
-            ".wav" => "audio/wav",
-            ".mp4" => "video/mp4",
-            ".jpg" or ".jpeg" => "image/jpeg",
-            ".png" => "image/png",
-            ".gif" => "image/gif",
-            ".html" => "text/html",
-            _ => "application/octet-stream" 
-        };
+            var result = _fileService.GetAudioFile(username, Path.GetFileName(fileName));
+            return File(result.Stream, result.ContentType, result.FileName);
+        }
+        catch (FileNotFoundException)
+        {
+            return NotFound("Plik nie został znaleziony.");
+        }
     }
+    [Authorize]
+    [HttpGet("download/transcription/{fileName}")]
+    public async Task<IActionResult> GetTranscriptionAsync([FromRoute] string fileName)
+    {
+        var user = User.Identity?.Name;
+        var transcript = await _fileService.GetTranscriptionAsync(fileName,user);
+
+        if (transcript != null)
+            return Ok(new { transcript });
+        var username = User.Identity?.Name;
+        await _fileService.GenerateTranscriptionAsync(fileName,username);
+
+        transcript = await _fileService.GetTranscriptionAsync(fileName, user);
+
+        if (transcript == null)
+            return StatusCode(500, "Nie udało się wygenerować transkrypcji");
+
+        return Ok(new { transcript });
+    }
+
+
 }

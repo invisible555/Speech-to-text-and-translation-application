@@ -1,24 +1,22 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import os
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 
-from transcriber import transcribe_from_path
+from audio_processing.convert import convert_audio
+from audio_processing.transcribe import transcribe_audio
 
 app = FastAPI()
 
-class TranscriptionRequest(BaseModel):
-    path: str
 
-@app.post("/transcribe/")
-async def transcribe(request: TranscriptionRequest):
-    if not os.path.exists(request.path):
-        raise HTTPException(status_code=400, detail="Plik nie istnieje.")
-
+@app.middleware("http")
+async def catch_exceptions_middleware(request: Request, call_next):
     try:
-        transcript_path = transcribe_from_path(request.path)
-        return {
-            "original_audio": os.path.abspath(request.path),
-            "transcript_file": transcript_path
-        }
+        return await call_next(request)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        return JSONResponse(
+            status_code=500,
+            content={"detail": f"Wewnętrzny błąd serwera: {str(e)}"}
+        )
+
+
+app.post("/convert")(convert_audio)
+app.post("/transcribe")(transcribe_audio)

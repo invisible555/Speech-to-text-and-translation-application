@@ -738,7 +738,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
         }
       },
-      "Microsoft.AspNetCore.SpaProxy/9.0.4": {
+      "Microsoft.AspNetCore.SpaProxy/9.0.5": {
         "type": "package",
         "compile": {
           "lib/net9.0/Microsoft.AspNetCore.SpaProxy.dll": {}
@@ -3882,10 +3882,10 @@
         "microsoft.aspnetcore.razor.language.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.SpaProxy/9.0.4": {
-      "sha512": "HOgobccKyqnbpliwlsgz9B7OP4vpqmTIMJM0Zc2t6XrYJV4MD0+4T+Yrs6muia5cXPXy2jsO/SjWoqqT1/mf8g==",
+    "Microsoft.AspNetCore.SpaProxy/9.0.5": {
+      "sha512": "iVsR0q1BizeYqgLst1g0k/TWxNOOGf46Od/VEqZficzRGuxOwPrhSsS8aQa6RYi9X3d2SjuURI33Ddky9LuE/Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.spaproxy/9.0.4",
+      "path": "microsoft.aspnetcore.spaproxy/9.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3893,7 +3893,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "build/Microsoft.AspNetCore.SpaProxy.targets",
         "lib/net9.0/Microsoft.AspNetCore.SpaProxy.dll",
-        "microsoft.aspnetcore.spaproxy.9.0.4.nupkg.sha512",
+        "microsoft.aspnetcore.spaproxy.9.0.5.nupkg.sha512",
         "microsoft.aspnetcore.spaproxy.nuspec"
       ]
     },
@@ -8106,23 +8106,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dell\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\niewi\\.nuget\\packages\\": {},
+    "E:\\visual studio bonus\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\ReactProject.Server.csproj",
+      "projectUniqueName": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj",
       "projectName": "ReactProject.Server",
-      "projectPath": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\ReactProject.Server.csproj",
-      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\obj\\",
+      "projectPath": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj",
+      "packagesPath": "C:\\Users\\niewi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "E:\\visual studio bonus\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\niewi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8216,7 +8216,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

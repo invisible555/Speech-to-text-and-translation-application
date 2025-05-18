@@ -36,6 +36,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="App_Data\UserFiles\User_1\files\" />
+    <Folder Include="App_Data\UserFiles\User_1\transcription\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axiosInstance from '../../../utils/axiosConfig';
-import AudioFileItemType from "./AudioFileItemType";
+import AudioFileItemType from './AudioFileItemType';
 import './AudioFileItem.css';
 
 const AudioFileItem: React.FC<AudioFileItemType> = ({ file }) => {
@@ -11,32 +11,27 @@ const AudioFileItem: React.FC<AudioFileItemType> = ({ file }) => {
   const handleClick = async () => {
     if (!expanded) {
       try {
-    
-        const transcriptResponse = await axiosInstance.get(`File/transcription/${file.fileName}`);
+        // 📥 1. Pobranie transkrypcji (z automatycznym generowaniem po stronie backendu)
+        const transcriptResponse = await axiosInstance.get(`File/download/transcription/${file.fileName}`);
         setTranscript(transcriptResponse.data.transcript);
+      } catch (error) {
+        console.error('Błąd podczas ładowania transkrypcji:', error);
+        setTranscript('Błąd pobierania transkrypcji');
       }
-      catch(error)
-      {
-          console.error('Błąd podczas ładowania transkrypcji:', error);
-          setTranscript('Błąd pobierania transkrypcji');
-      }
-      
-        const audioResponse = await axiosInstance.get(`File/download/${file.fileName}`, {
-          responseType: 'blob', 
-        
+
+      try {
+        // 🎵 2. Pobranie pliku audio jako blob
+        const audioResponse = await axiosInstance.get(`File/download/file/${file.fileName}`, {
+          responseType: 'blob',
         });
 
-        try{
         const blobUrl = URL.createObjectURL(audioResponse.data);
         setAudioSrc(blobUrl);
-        
-
       } catch (error) {
-   
-        console.log("Bład pobierania pliku")
-        
+        console.error('Błąd pobierania pliku audio:', error);
       }
     }
+
     setExpanded(!expanded);
   };
 

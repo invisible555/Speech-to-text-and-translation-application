@@ -15,7 +15,8 @@
         {
             var path = Path.Combine(_storagePath, login);
 
-            Directory.CreateDirectory(path);
+            Directory.CreateDirectory(path+ "transcription");
+            Directory.CreateDirectory(path + "files");
 
             return Task.CompletedTask;
         }

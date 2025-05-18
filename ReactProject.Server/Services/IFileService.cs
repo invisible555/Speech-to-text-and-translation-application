@@ -5,10 +5,15 @@ namespace ReactProject.Server.Services
 {
     public interface IFileService
     {
-    
-        FileStream GetFile(string login, string fileName);
+        
         Task<string> SaveUserFileAsync(IFormFile file, string login);
+        FileWithStreamDTO GetAudioFile(string login, string relativeFilePath);
         List<UserFileDto> GetUserFiles(string login);
+        Task GenerateTranscriptionAsync(string filepath,string login);
+     
+        Task ConvertFileToWav(string filepath,string login);
+   
+        Task<string?> GetTranscriptionAsync(string fileName,string login);
     }
 }
 

@@ -11,10 +11,12 @@ const AudioFileList: React.FC = () => {
     const fetchFiles = async () => {
       try {
         const response = await axiosInstance.get<AudioFileType[]>('/File/files');
+        
 
          const filesWithUrls = response.data.map((file) => ({
           ...file,
-          url: `File/download/${file.fileName}`, 
+          url: `File/download/file/${file.fileName}`, 
+          
         }));
         setFiles(filesWithUrls);
       } catch (error) {

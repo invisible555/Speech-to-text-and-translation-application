@@ -1,7 +1,10 @@
-﻿using ReactProject.Server.DTO;
+﻿using Microsoft.IdentityModel.Tokens;
+using ReactProject.Server.DTO;
 using ReactProject.Server.Entities;
 using ReactProject.Server.Repositories;
 using ReactProject.Server.Services;
+using System.Text;
+using System.Text.Json;
 
 public class FileService : IFileService
 {
@@ -10,14 +13,17 @@ public class FileService : IFileService
     private readonly IUserStorageService _userStorageService;
     private readonly IUserRepository _userRepository;
     private readonly IFileRepository _fileRepository;
-    public FileService(IWebHostEnvironment env,IConfiguration configuration, IUserStorageService userStorageService, IUserRepository userRepository, IFileRepository fileRepository)
-    { 
-        
+    private readonly HttpClient _client;
+    public FileService(IWebHostEnvironment env, IConfiguration configuration, IUserStorageService userStorageService, IUserRepository userRepository, IFileRepository fileRepository, IHttpClientFactory client)
+    {
+
         _env = env;
         _userStorageService = userStorageService;
         _storagePath = _userStorageService.GetStoragePath();
         _userRepository = userRepository;
         _fileRepository = fileRepository;
+        _client = client.CreateClient("TranscriptionApi");
+
 
     }
 
@@ -27,62 +33,155 @@ public class FileService : IFileService
         if (file == null || file.Length == 0)
             throw new InvalidOperationException("Plik jest pusty.");
 
-        var userFolderPath = Path.Combine(_storagePath, login);
+        var userFolderPath = Path.Combine(_storagePath, login, "files");
 
         if (!Directory.Exists(userFolderPath))
-        {
             await _userStorageService.CreateUserDirectoryAsync(login);
-        }
 
-        var filePath = Path.Combine(userFolderPath, file.FileName);
+        // Zapisz oryginalny plik na dysk, by można go było przekazać do konwersji
+        var originalFilePath = Path.Combine(userFolderPath, file.FileName);
+        await _fileRepository.SaveFileToDiskAsync(file, originalFilePath);
 
-        await _fileRepository.SaveFileToDiskAsync(file, filePath);
+        // Wyodrębnij nazwę pliku do użycia w API
+        var relativeFileName = Path.GetFileName(file.FileName);
+
+        // Wywołanie konwersji do WAV (np. poprzez serwis HTTP)
+        await ConvertFileToWav(relativeFileName, login);
+
+        // Ścieżka pliku wynikowego (ten plik powinien zostać utworzony przez konwersję)
+        var wavFileName = Path.GetFileNameWithoutExtension(file.FileName) + ".wav";
+        var wavFilePath = Path.Combine(userFolderPath, wavFileName);
+
+        // Sprawdź, czy plik WAV został utworzony
+        if (!File.Exists(wavFilePath))
+            throw new Exception("Plik WAV nie został utworzony.");
 
         var user = await _userRepository.GetByLoginAsync(login);
         if (user == null)
             throw new InvalidOperationException("Nie znaleziono użytkownika.");
 
+        var fileInfo = new FileInfo(wavFilePath);
+
         var userFile = new UserFile
         {
             UserId = user.Id,
-            FileName = file.FileName,
-            FileType = Path.GetExtension(file.FileName).TrimStart('.'),
-            FileSize = file.Length,
+            FileName = wavFileName,
+            FileType = "wav",
+            FileSize = fileInfo.Length,
             UploadDate = DateTime.UtcNow
         };
 
         await _fileRepository.SaveFileMetadataAsync(userFile);
 
-        return filePath;
+        return wavFilePath;
     }
 
-    
-    public FileStream GetFile(string login, string fileName)
+
+    public FileWithStreamDTO GetAudioFile(string login, string relativeFilePath)
+{
+    var userFolderPath = Path.Combine(_storagePath, login);
+    var filePath = Path.Combine(userFolderPath,"files", relativeFilePath);
+
+    if (!File.Exists(filePath))
+        throw new FileNotFoundException("Plik nie został znaleziony.");
+
+    string extension = Path.GetExtension(filePath).ToLowerInvariant();
+    string[] allowedAudioExtensions = { ".mp3", ".wav", ".ogg", ".flac", ".aac", ".m4a" };
+
+    if (!allowedAudioExtensions.Contains(extension))
+        throw new InvalidOperationException("Dozwolone są tylko pliki audio.");
+
+    return new FileWithStreamDTO
     {
-        var userFolderPath = Path.Combine(_storagePath, login);
-        var filePath = Path.Combine(userFolderPath, fileName);
-
-        if (!File.Exists(filePath))
-            throw new FileNotFoundException("Plik nie został znaleziony.");
-
-        return new FileStream(filePath, FileMode.Open, FileAccess.Read);
-    }
-
+        Stream = new FileStream(filePath, FileMode.Open, FileAccess.Read),
+        FileName = Path.GetFileName(filePath),
+        ContentType = GetContentType(filePath),
+    };
+}
     public List<UserFileDto> GetUserFiles(string login)
     {
-        var userFolderPath = Path.Combine(_storagePath, login);
+        var userFilesPath = Path.Combine(_storagePath, login, "files");
 
-        if (!Directory.Exists(userFolderPath))
+        if (!Directory.Exists(userFilesPath))
             return new List<UserFileDto>();
 
-        return Directory.GetFiles(userFolderPath)
+        return Directory.GetFiles(userFilesPath)
             .Select(path => new UserFileDto
             {
                 FileName = Path.GetFileName(path),
-                Url = $"{Path.GetFileName(path)}"
+                Url = $"File/download/files/{Path.GetFileName(path)}"
             })
             .ToList();
     }
 
+    public async Task GenerateTranscriptionAsync(string fileName, string login)
+    {
+        var content = ConvertRequest(login, fileName);
+        var response = await _client.PostAsync("transcribe", content);
 
+        if (!response.IsSuccessStatusCode)
+        {
+            var error = await response.Content.ReadAsStringAsync();
+            throw new Exception($"Błąd transkrypcji: {error}");
+        }
+    }
+
+    public async Task ConvertFileToWav(string filepath, string login)
+    {
+        var content = ConvertRequest(login, filepath);
+
+        var response = await _client.PostAsync("convert", content);
+        if (!response.IsSuccessStatusCode)
+        {
+            var error = await response.Content.ReadAsStringAsync();
+            throw new Exception($"Błąd konwertowania na wav: {error}");
+        }
+    }
+    private StringContent ConvertRequest(string username, string filename)
+    {
+        var payload = new
+        {
+            username = username,
+            filename = filename
+        };
+
+        return new StringContent(
+            JsonSerializer.Serialize(payload),
+            Encoding.UTF8,
+            "application/json"
+        );
+    }
+    public async Task<string?> GetTranscriptionAsync(string fileName,string login)
+    {
+        var transcriptionFileName = Path.ChangeExtension(fileName, ".txt"); 
+        var transcriptionPath = Path.Combine(_storagePath,login, "transcription", transcriptionFileName);
+
+        if (!File.Exists(transcriptionPath))
+        {
+            return null;
+        }
+
+        return await File.ReadAllTextAsync(transcriptionPath);
+    }
+
+    private string GetContentType(string fileName)
+    {
+        var extension = Path.GetExtension(fileName).ToLowerInvariant();
+
+        return extension switch
+        {
+            ".txt" => "text/plain",
+            ".json" => "application/json",
+            ".csv" => "text/csv",
+            ".pdf" => "application/pdf",
+            ".mp3" => "audio/mpeg",
+            ".wav" => "audio/wav",
+            ".mp4" => "video/mp4",
+            ".jpg" or ".jpeg" => "image/jpeg",
+            ".png" => "image/png",
+            ".gif" => "image/gif",
+            ".html" => "text/html",
+            _ => "application/octet-stream"
+        };
+    }
 }
