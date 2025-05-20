@@ -25,14 +25,16 @@ namespace ReactProject.Server.Repositories
 
         public async Task<UserRefreshTokens?> GetRefreshTokenAsync(string token)
         {
-          return  await _dbContext.UserRefreshTokens.FirstOrDefaultAsync(t => t.Token == token && t.IsActive);
+            return await _dbContext.UserRefreshTokens
+                .FirstOrDefaultAsync(t => t.Token == token && !t.IsRevoked && t.ExpiryDate > DateTime.UtcNow);
         }
 
         public async Task<UserAccessTokens?> GetAccessTokenAsync(string token)
         {
-           return await _dbContext.UserAccessTokens.FirstOrDefaultAsync(t => t.Token == token && t.IsActive);   
+            return await _dbContext.UserAccessTokens
+                .FirstOrDefaultAsync(t => t.Token == token && !t.IsRevoked && t.ExpiryDate > DateTime.UtcNow);
         }
-        
+
 
         public async Task DeactivateAccessTokenAsync(string token)
         {
@@ -62,5 +64,49 @@ namespace ReactProject.Server.Repositories
         {
             await _dbContext.SaveChangesAsync();
         }
+        public async Task SaveUserTokensAsync(int userId, string accessToken, DateTime accessExpiry,
+                                      string refreshToken, DateTime refreshExpiry)
+        {
+            await using var transaction = await _dbContext.Database.BeginTransactionAsync();
+
+            try
+            {
+                var accessTokenEntity = new UserAccessTokens
+                {
+                    UserId = userId,
+                    Token = accessToken,
+                    ExpiryDate = accessExpiry,
+                    IsRevoked = false
+                };
+
+                var refreshTokenEntity = new UserRefreshTokens
+                {
+                    UserId = userId,
+                    Token = refreshToken,
+                    ExpiryDate = refreshExpiry,
+                    IsRevoked = false
+                };
+
+                await _dbContext.UserAccessTokens.AddAsync(accessTokenEntity);
+                await _dbContext.UserRefreshTokens.AddAsync(refreshTokenEntity);
+                await _dbContext.SaveChangesAsync();
+
+                await transaction.CommitAsync();
+            }
+            catch (Exception)
+            {
+                await transaction.RollbackAsync();
+                throw new Exception("Nie udało się zapisać tokenów (transakcja nie powiodła się).");
+            }
+        }
+        public async Task<bool> IsAccessTokenValidAsync(string token)
+        {
+            var dbToken = await _dbContext.UserAccessTokens
+                .Where(t => t.Token == token)
+                .FirstOrDefaultAsync();
+
+            return dbToken?.IsActive == true;
+        }
+
     }
 }

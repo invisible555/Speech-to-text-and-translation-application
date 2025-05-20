@@ -5,6 +5,7 @@ const AudioUpload: React.FC = () => {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [uploading, setUploading] = useState(false);
     const [message, setMessage] = useState<string | null>(null);
+    const [selectedLanguage, setLanguage] = useState<string>("pl");
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -13,16 +14,19 @@ const AudioUpload: React.FC = () => {
             setMessage(null);
         }
     };
-
+      const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setLanguage(event.target.value);
+    };
     const handleUpload = async () => {
         if (!selectedFile) {
             setMessage("Wybierz plik dźwiękowy przed wysłaniem.");
             return;
         }
+  
 
         const formData = new FormData();
         formData.append("file", selectedFile);
-
+        formData.append("language", selectedLanguage)
         setUploading(true);
         try {
             const response = await axiosInstance.post('File/upload', formData);
@@ -40,6 +44,11 @@ const AudioUpload: React.FC = () => {
     return (
         <div className="audio-upload">
             <h2>Wyślij plik dźwiękowy</h2>
+            <label>Wybierz język</label>
+              <select value={selectedLanguage} onChange={handleLanguageChange}>
+                <option value="pl">Polski</option>
+                <option value="en">Angielski</option>
+            </select>
             <input type="file" accept="audio/*" onChange={handleFileChange} />
             <button onClick={handleUpload} disabled={uploading}>
                 {uploading ? "Wysyłanie..." : "Wyślij"}

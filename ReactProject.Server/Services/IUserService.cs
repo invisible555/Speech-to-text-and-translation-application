@@ -9,9 +9,14 @@ namespace ReactProject.Server.Services
         Task<AuthenticationResultDTO?> Authenticate(string login, string password);
         Task<RegisterResultDTO> RegisterUser(RegisterRequestDTO model);
         Task<bool> LogoutAsync(int userId);
+
+
+        Task SaveUserTokensAsync(int userId, string accessToken, string refreshToken);
+        Task SaveRefreshTokenAsync(int userId, string refreshToken);
+        Task SaveAccessTokenAsync(int userId, string accessToken);
+        Task<string?> GenerateAccessToken(string refreshToken);
         string? GetUserRole(ClaimsPrincipal user);
         string? GetUserId(ClaimsPrincipal user);
-        
-        Task SaveUserTokens(int userId, string accessToken, string refreshToken);
+        string? GetUserLogin(ClaimsPrincipal user);
     }
 }

@@ -8,9 +8,10 @@ import Navbar from "./Components/Navbar/Navbar"
 import { BrowserRouter as Router, Route,Routes, Link } from 'react-router-dom';
 import HomePage from './Components/HomePage/HomePage';
 import AudioUpload from './Components/AudioUpload/AudioUpload';
+import { useTokenRefresh } from './Components/usetokenRefresh/useTokenRefresh';
 
 function App() {
-   
+    useTokenRefresh();
 
    
     return (

@@ -6,7 +6,7 @@ namespace ReactProject.Server.Services
     public interface IFileService
     {
         
-        Task<string> SaveUserFileAsync(IFormFile file, string login);
+        Task<string> SaveUserFileAsync(IFormFile file, string login,string language);
         FileWithStreamDTO GetAudioFile(string login, string relativeFilePath);
         List<UserFileDto> GetUserFiles(string login);
         Task GenerateTranscriptionAsync(string filepath,string login);

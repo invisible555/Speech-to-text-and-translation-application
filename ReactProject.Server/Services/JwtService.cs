@@ -9,12 +9,14 @@ public class JwtService
 {
     private readonly string _jwtSecret;
     private readonly IConfiguration _config;
-    private readonly int tokenLiveTime = 15; 
+    private readonly int tokenLiveTime;
 
     public JwtService(IConfiguration config)
     {
         _config = config;
-        _jwtSecret = config["Jwt:Key"];
+        _jwtSecret = config["Jwt:Key"] ?? throw new ArgumentNullException("JWT key is missing in configuration.");
+        tokenLiveTime = int.TryParse(config["Jwt:AccessTokenLifetimeMinutes"], out var minutes) ? minutes : 15;
+
     }
 
     public string GenerateAccessToken(string id,string username, string role)

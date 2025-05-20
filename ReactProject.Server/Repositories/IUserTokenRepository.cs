@@ -12,5 +12,9 @@ namespace ReactProject.Server.Repositories
         Task DeactivateAccessTokenAsync(string token);
         Task DeactivateAllTokensAsync(int userId);
         Task SaveChangesAsync();
+        Task SaveUserTokensAsync(int userId, string accessToken, DateTime accessExpiry,
+                         string refreshToken, DateTime refreshExpiry);
+        Task<bool> IsAccessTokenValidAsync(string token);
+
     }
 }

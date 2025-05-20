@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../Context/AuthContext';
 import axiosInstance from '../../../utils/axiosConfig';
+import { jwtDecode } from 'jwt-decode';
 
 const Login = () => {
     const [loginInput, setLoginInput] = useState('');
@@ -22,10 +23,13 @@ const Login = () => {
             });
             const data = response.data;
             const token = data.accessToken;
+            const refreshToken = data.refreshToken;
             const user = data.login;
 
             if (token && user) {
-                login(token, user);
+                const decoded: any = jwtDecode(token);
+                const role = decoded.role ?? '';
+                login(token,refreshToken, user,role);
                 navigate('/');
             } else {
                 throw new Error('Brak tokena w odpowiedzi serwera');

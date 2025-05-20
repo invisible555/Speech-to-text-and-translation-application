@@ -9,21 +9,26 @@ namespace ReactProject.Server.Services
 {
     public class UserService : IUserService
     {
+        private readonly IConfiguration _config;
         private readonly IUserRepository _userRepository;
         private readonly IUserTokenRepository _userTokenRepository;
         private readonly JwtService _jwtService;
         private readonly PasswordHasher<User> _passwordHasher;
         private readonly IUserStorageService _userStorageService;
-        private readonly int _accessTokenLiveTime = 15;
-        private readonly int _refreshTokenLiveTime = 1;
+        private readonly int _accessTokenLiveTime;
+        private readonly int _refreshTokenLiveTime;
 
-        public UserService(IUserRepository userRepository, IUserTokenRepository userTokenRepository, JwtService jwtService, IUserStorageService userStorageService)
+        public UserService(IUserRepository userRepository, IUserTokenRepository userTokenRepository, JwtService jwtService, IUserStorageService userStorageService, IConfiguration config)
         {
+            _config = config;
             _userRepository = userRepository;
             _userTokenRepository = userTokenRepository;
             _jwtService = jwtService;
             _passwordHasher = new PasswordHasher<User>();
             _userStorageService = userStorageService;
+            _accessTokenLiveTime = int.TryParse(config["Jwt:AccessTokenLifetimeMinutes"], out var minutes) ? minutes : 15;
+            _refreshTokenLiveTime = int.TryParse(config["Jwt:RefreshTokenLifetimeDays"], out var days) ? days : 15;
+            _config = config;
         }
 
         public async Task<AuthenticationResultDTO?> Authenticate(string login, string password)
@@ -62,6 +67,7 @@ namespace ReactProject.Server.Services
             {
                 Success = true,
                 AccessToken = accessToken,
+                RefreshToken = refreshToken,
                 ExpiryTime = accessTokenEntity.ExpiryDate,
                 User = user
             };
@@ -110,21 +116,8 @@ namespace ReactProject.Server.Services
             await _userTokenRepository.SaveChangesAsync();
             return true;
         }
-        //?TODO
-        public  string? GetUserRole(ClaimsPrincipal user)
-        {
-            var role = user.FindFirst(ClaimTypes.Role)?.Value;
-            return role;
-        }
-        //?TODO
-        public string? GetUserId(ClaimsPrincipal user)
-        {
-            var id = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            return id;
-        }
-        
 
-        public async Task SaveUserTokens(int userId, string accessToken, string refreshToken)
+        public async Task SaveAccessTokenAsync(int userId, string accessToken)
         {
             var accessTokenEntity = new UserAccessTokens
             {
@@ -134,25 +127,88 @@ namespace ReactProject.Server.Services
                 IsRevoked = false,
             };
 
+            try
+            {
+                await _userTokenRepository.AddAccessTokenAsync(accessTokenEntity);
+                await _userTokenRepository.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Nie udało się zapisać access tokena.");
+            }
+        }
+        public async Task SaveRefreshTokenAsync(int userId, string refreshToken)
+        {
             var refreshTokenEntity = new UserRefreshTokens
             {
                 UserId = userId,
                 Token = refreshToken,
                 ExpiryDate = DateTime.UtcNow.AddDays(_refreshTokenLiveTime),
                 IsRevoked = false,
-
             };
+
             try
             {
-                await _userTokenRepository.AddAccessTokenAsync(accessTokenEntity);
                 await _userTokenRepository.AddRefreshTokenAsync(refreshTokenEntity);
                 await _userTokenRepository.SaveChangesAsync();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception("Nie udało się zapisać tokenów");
+                throw new Exception("Nie udało się zapisać refresh tokena.");
             }
         }
+        public string? GetUserRole(ClaimsPrincipal user)
+        {
+            return user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+        }
+        public string? GetUserId(ClaimsPrincipal user)
+        {
+            return user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+        }
+        public string? GetUserLogin(ClaimsPrincipal user)
+        {
+            return user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+        }
+
+
+        public async Task SaveUserTokensAsync(int userId, string accessToken, string refreshToken)
+        {
+            var accessExpiry = DateTime.UtcNow.AddMinutes(_accessTokenLiveTime);
+            var refreshExpiry = DateTime.UtcNow.AddDays(_refreshTokenLiveTime);
+
+            await _userTokenRepository.SaveUserTokensAsync(userId, accessToken, accessExpiry, refreshToken, refreshExpiry);
+        }
+        public async Task<string?> GenerateAccessToken(string refreshToken)
+        {
+            var storedToken = await _userTokenRepository.GetRefreshTokenAsync(refreshToken);
+
+            if (storedToken == null || storedToken.IsRevoked || !storedToken.IsActive)
+            {
+                return null;
+            }
+
+            var user = await _userRepository.GetByIdAsync(storedToken.UserId);
+            if (user == null)
+            {
+                return null;
+            }
+
+            var newAccessToken = _jwtService.GenerateAccessToken(user.Id.ToString(), user.Login, user.Role);
+
+            var tokenEntity = new UserAccessTokens
+            {
+                UserId = user.Id,
+                Token = newAccessToken,
+                ExpiryDate = DateTime.UtcNow.AddMinutes(_accessTokenLiveTime),
+            };
+
+            await _userTokenRepository.AddAccessTokenAsync(tokenEntity);
+            await _userTokenRepository.SaveChangesAsync();
+
+            return newAccessToken;
+        }
+
+
 
 
     }

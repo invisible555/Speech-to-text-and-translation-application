@@ -7,7 +7,7 @@ using ReactProject.Server.Repositories;
 using ReactProject.Server.Services;
 using System.Security.Claims;
 using System.Text;
-
+using ReactProject.Server.Middleware;
 namespace ReactProject.Server
 {
     public class Program
@@ -89,7 +89,8 @@ namespace ReactProject.Server
             // JWT Authentication
             var jwtKey = builder.Configuration["Jwt:Key"] ?? "powerfullkey";
             var keyBytes = Encoding.UTF8.GetBytes(jwtKey);
-
+            
+            builder.Services.AddScoped<ITokenValidatorService, TokenValidatorService>();
             builder.Services.AddScoped<JwtService>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -132,7 +133,8 @@ namespace ReactProject.Server
             app.UseHttpsRedirection();
             app.UseCors("AllowFrontend");
              // CORS
-            app.UseAuthentication();   // JWT
+            app.UseAuthentication();// JWT
+            app.UseMiddleware<TokenRevocationMiddleware>();
             app.UseAuthorization();    // Role-based or claims-based auth
 
             app.UseDefaultFiles();     // index.html, etc.

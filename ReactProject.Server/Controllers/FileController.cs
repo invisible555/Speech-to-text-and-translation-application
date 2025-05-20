@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+using ReactProject.Server.DTO;
 using ReactProject.Server.Model;
 using ReactProject.Server.Services;
 
@@ -18,9 +19,9 @@ public class FileController : ControllerBase
 
     [Authorize]
     [HttpPost("upload")]
-    public async Task<IActionResult> UploadFile(IFormFile file)
+    public async Task<IActionResult> UploadFile([FromForm] UploadFileDTO dto)
     {
-        if (file == null || file.Length == 0)
+        if (dto.File == null || dto.File.Length == 0)
             return BadRequest("Brak pliku.");
 
         var username = User.Identity?.Name;
@@ -29,7 +30,7 @@ public class FileController : ControllerBase
 
         try
         {
-            var savedPath = await _fileService.SaveUserFileAsync(file, username);
+            var savedPath = await _fileService.SaveUserFileAsync(dto.File, username, dto.Language);
 
             return Ok(new { path = savedPath });
         }

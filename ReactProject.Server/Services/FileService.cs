@@ -28,7 +28,7 @@ public class FileService : IFileService
     }
 
     // Zapisanie pliku do systemu
-    public async Task<string> SaveUserFileAsync(IFormFile file, string login)
+    public async Task<string> SaveUserFileAsync(IFormFile file, string login, string language)
     {
         if (file == null || file.Length == 0)
             throw new InvalidOperationException("Plik jest pusty.");

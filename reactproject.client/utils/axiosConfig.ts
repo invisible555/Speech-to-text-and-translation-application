@@ -1,42 +1,85 @@
 import axios from 'axios';
-import { useAuth } from '../src/Context/AuthContext';  // Upewnij się, że masz odpowiedni kontekst autoryzacji
-
-
-
 
 const axiosInstance = axios.create({
-  baseURL: 'https://localhost:7260/api/',  // Zmienna do podstawowego URL API
-  
+  baseURL: 'https://localhost:7260/api/',
 });
 
-// Interceptor dla requestów - dodawanie tokenu do nagłówka
+let isRefreshing = false;
+let refreshSubscribers: ((token: string) => void)[] = [];
+
+const subscribeTokenRefresh = (callback: (token: string) => void) => {
+  refreshSubscribers.push(callback);
+};
+
+const onRefreshed = (token: string) => {
+  refreshSubscribers.forEach((callback) => callback(token));
+  refreshSubscribers = [];
+};
+
+const redirectToLogin = () => {
+  window.location.href = '/login';
+};
+
+const getAccessToken = () => localStorage.getItem('token');
+const getRefreshToken = () => localStorage.getItem('refreshToken');
+
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token');  // Pobierz token z localStorage
-    if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`;  // Dodaj token do nagłówka
+    const token = getAccessToken();
+    if (token && config.headers) {
+      config.headers['Authorization'] = `Bearer ${token}`;
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
-// Interceptor dla odpowiedzi - obsługa błędów (np. 401)
 axiosInstance.interceptors.response.use(
-  (response) => response,  // Jeśli odpowiedź jest sukcesem, po prostu ją zwróć
-  (error) => {
-    if (error.response && error.response.status === 401) {
-      // Jeśli błąd to 401 (Unauthorized), przekieruj do logowania
-     // const { logout, navigateToLogin } = useAuth();
-      //logout(); // Wyloguj użytkownika
-      //navigateToLogin();
-       // Przekierowanie do strony logowania
-       
-       console.log("logout")
+  response => response,
+  async (error) => {
+    const originalRequest = error.config;
+
+    if (error.response?.status === 401 && !originalRequest._retry) {
+      const refreshToken = getRefreshToken();
+      if (!refreshToken) {
+        redirectToLogin();
+        return Promise.reject(error);
+      }
+
+      if (isRefreshing) {
+        return new Promise((resolve) => {
+          subscribeTokenRefresh((token) => {
+            originalRequest.headers['Authorization'] = `Bearer ${token}`;
+            resolve(axiosInstance(originalRequest));
+          });
+        });
+      }
+
+      originalRequest._retry = true;
+      isRefreshing = true;
+
+      try {
+        const response = await axios.post('https://localhost:7260/api/User/refresh-access-token', {
+          refreshToken
+        });
+
+        const newToken = response.data.accessToken;
+        localStorage.setItem('token', newToken);
+
+        onRefreshed(newToken);
+        originalRequest.headers['Authorization'] = `Bearer ${newToken}`;
+        return axiosInstance(originalRequest);
+      } catch (err) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('refreshToken');
+        redirectToLogin();
+        return Promise.reject(err);
+      } finally {
+        isRefreshing = false;
+      }
     }
-    return Promise.reject(error);  // Inne błędy pozostają bez zmian
+
+    return Promise.reject(error);
   }
 );
 

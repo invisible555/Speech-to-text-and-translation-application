@@ -39,5 +39,6 @@ namespace ReactProject.Server.Repositories
         {
             return await _dbContext.User.FirstOrDefaultAsync(u => u.Id == id);
         }
+       
     }
 }
