@@ -74,20 +74,33 @@ public class FileController : ControllerBase
     }
     [Authorize]
     [HttpGet("download/transcription/{fileName}")]
-    public async Task<IActionResult> GetTranscriptionAsync([FromRoute] string fileName)
+    public async Task<IActionResult> GetTranscriptionAsync([FromRoute] string fileName, [FromQuery] string sourceLang = "en", [FromQuery] string targetLang = "pl")
     {
         var user = User.Identity?.Name;
-        var transcript = await _fileService.GetTranscriptionAsync(fileName,user);
+        if (string.IsNullOrEmpty(user))
+            return Unauthorized();
 
+        var transcript = await _fileService.GetTranscriptionAsync(fileName, user);
         if (transcript != null)
             return Ok(new { transcript });
-        var username = User.Identity?.Name;
-        await _fileService.GenerateTranscriptionAsync(fileName,username);
+
+        try
+        {
+            
+      
+
+            // Wywołanie metody z odpowiednimi parametrami
+            await _fileService.GenerateTranscriptionAsync(sourceLang, targetLang, fileName,user);
+        }
+        catch (Exception ex)
+        {
+            // Możesz logować ex.Message
+            return StatusCode(500, "Błąd podczas generowania transkrypcji.");
+        }
 
         transcript = await _fileService.GetTranscriptionAsync(fileName, user);
-
         if (transcript == null)
-            return StatusCode(500, "Nie udało się wygenerować transkrypcji");
+            return StatusCode(500, "Nie udało się wygenerować transkrypcji.");
 
         return Ok(new { transcript });
     }

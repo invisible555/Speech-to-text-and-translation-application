@@ -1,10 +1,12 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using ReactProject.Server.DTO;
 using ReactProject.Server.Entities;
+using ReactProject.Server.Model;
 using ReactProject.Server.Repositories;
 using ReactProject.Server.Services;
 using System.Text;
 using System.Text.Json;
+using static System.Net.Mime.MediaTypeNames;
 
 public class FileService : IFileService
 {
@@ -27,7 +29,7 @@ public class FileService : IFileService
 
     }
 
-    // Zapisanie pliku do systemu
+
     public async Task<string> SaveUserFileAsync(IFormFile file, string login, string language)
     {
         if (file == null || file.Length == 0)
@@ -38,21 +40,27 @@ public class FileService : IFileService
         if (!Directory.Exists(userFolderPath))
             await _userStorageService.CreateUserDirectoryAsync(login);
 
-        // Zapisz oryginalny plik na dysk, by można go było przekazać do konwersji
+        
         var originalFilePath = Path.Combine(userFolderPath, file.FileName);
         await _fileRepository.SaveFileToDiskAsync(file, originalFilePath);
 
-        // Wyodrębnij nazwę pliku do użycia w API
+ 
         var relativeFileName = Path.GetFileName(file.FileName);
+        try
+        {
+         
+            await ConvertFileToWav(relativeFileName, login);
+        }
+        catch
+        {
+            return "";
+        }
 
-        // Wywołanie konwersji do WAV (np. poprzez serwis HTTP)
-        await ConvertFileToWav(relativeFileName, login);
-
-        // Ścieżka pliku wynikowego (ten plik powinien zostać utworzony przez konwersję)
+  
         var wavFileName = Path.GetFileNameWithoutExtension(file.FileName) + ".wav";
         var wavFilePath = Path.Combine(userFolderPath, wavFileName);
 
-        // Sprawdź, czy plik WAV został utworzony
+    
         if (!File.Exists(wavFilePath))
             throw new Exception("Plik WAV nie został utworzony.");
 
@@ -114,10 +122,26 @@ public class FileService : IFileService
             .ToList();
     }
 
-    public async Task GenerateTranscriptionAsync(string fileName, string login)
+    public async Task GenerateTranscriptionAsync(string sourceLang, string targetLang, string originalFilepath,string user)
     {
-        var content = ConvertRequest(login, fileName);
-        var response = await _client.PostAsync("transcribe", content);
+        var fullPath = Path.Combine(_storagePath, user, originalFilepath);
+        if (string.IsNullOrWhiteSpace(originalFilepath) || !File.Exists(originalFilepath))
+            throw new FileNotFoundException("Plik do transkrypcji nie istnieje.", originalFilepath);
+
+        var requestObj = new
+        {
+            source_lang = sourceLang,
+            target_lang = targetLang,
+            original_filepath = originalFilepath
+        };
+
+        var jsonContent = new StringContent(
+            JsonSerializer.Serialize(requestObj),
+            Encoding.UTF8,
+            "application/json"
+        );
+
+        var response = await _client.PostAsync("transcribe", jsonContent);
 
         if (!response.IsSuccessStatusCode)
         {

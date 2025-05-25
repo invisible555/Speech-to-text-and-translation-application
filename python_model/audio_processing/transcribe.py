@@ -1,34 +1,35 @@
-from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
 import os
-import wave
 import json
+import wave
 from vosk import Model, KaldiRecognizer
-from config.audio_config import VOSK_MODEL_PATH, STORAGE_PATH
+from fastapi import HTTPException
+from pydantic import BaseModel
+from python_model.config.audio_config import VOSK_MODEL_PATH, STORAGE_PATH
 
 
+# Załaduj model Vosk raz
 vosk_model = Model(VOSK_MODEL_PATH)
 
 class AudioRequest(BaseModel):
-    username: str    
-    filename: str     
+    username: str
+    filename: str  # tylko nazwa pliku np. "audio.wav"
 
-router = APIRouter()
-
-@router.post("/transcribe")
-async def transcribe_audio(req: AudioRequest):
-    
+def transcribe_audio_sync(req: AudioRequest, lang: str = "pl") -> dict:
+    """
+    Transkrybuje plik WAV mono 16-bit PCM i zapisuje wynik jako plik .txt z dopiskiem języka.
+    """
+    # Pełna ścieżka do pliku audio
     audio_path = os.path.join(STORAGE_PATH, req.username, "files", req.filename)
 
     if not os.path.exists(audio_path):
         raise HTTPException(status_code=404, detail="Plik audio nie istnieje.")
-    
+
     try:
         wf = wave.open(audio_path, "rb")
     except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Nie można otworzyć pliku audio: {str(e)}")
- 
-    # Sprawdzenie parametrów audio: mono, 16-bit PCM, brak kompresji
+        raise HTTPException(status_code=400, detail=f"Nie można otworzyć pliku: {str(e)}")
+
+    # Weryfikacja formatu WAV
     if wf.getnchannels() != 1 or wf.getsampwidth() != 2 or wf.getcomptype() != "NONE":
         raise HTTPException(status_code=400, detail="Plik audio musi być WAV, mono, 16-bit PCM.")
 
@@ -37,7 +38,7 @@ async def transcribe_audio(req: AudioRequest):
     results = []
     while True:
         data = wf.readframes(4000)
-        if len(data) == 0:
+        if not data:
             break
         if rec.AcceptWaveform(data):
             result = json.loads(rec.Result())
@@ -47,17 +48,17 @@ async def transcribe_audio(req: AudioRequest):
 
     transcript = " ".join(results).strip()
 
-    
+    # Zapis do pliku
     transcription_dir = os.path.join(STORAGE_PATH, req.username, "transcription")
     os.makedirs(transcription_dir, exist_ok=True)
 
-    
-    transcript_path = os.path.join(transcription_dir, f"{os.path.splitext(req.filename)[0]}.txt")
+    base_name = os.path.splitext(req.filename)[0]
+    output_filename = f"{base_name}_{lang}.txt"
+    output_path = os.path.join(transcription_dir, output_filename)
 
-    # Zapis transkrypcji do pliku
-    with open(transcript_path, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(transcript)
 
-    print(f"Transkrypcja zapisana do: {transcript_path}")
+    print(f"[Transkrypcja] Zapisano: {output_path}")
 
-    return {"text": transcript}
+    return {"text": transcript, "path": output_path}

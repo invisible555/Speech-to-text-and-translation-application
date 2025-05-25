@@ -1,11 +1,25 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
+from pydantic import BaseModel
+from python_model.tasks import convert_task, transcribe_task, translate_task
+import traceback
+from fastapi import HTTPException
 
-from audio_processing.convert import convert_audio
-from audio_processing.transcribe import transcribe_audio
 
 app = FastAPI()
 
+class AudioRequest(BaseModel):
+    username: str = None  # jeśli potrzebujesz
+    filename: str
+
+class TranscribeRequest(BaseModel):
+    username: str
+    filename: str
+
+class TranslateRequest(BaseModel):
+    source_lang: str
+    target_lang: str
+    original_filepath: str 
 
 @app.middleware("http")
 async def catch_exceptions_middleware(request: Request, call_next):
@@ -17,6 +31,46 @@ async def catch_exceptions_middleware(request: Request, call_next):
             content={"detail": f"Wewnętrzny błąd serwera: {str(e)}"}
         )
 
+@app.post("/convert")
+async def convert_endpoint(req: AudioRequest):
+    convert_task.delay(req.filename)
+    return {"message": "Zadanie konwersji zostało dodane do kolejki"}
 
-app.post("/convert")(convert_audio)
-app.post("/transcribe")(transcribe_audio)
+
+
+
+@app.post("/transcribe")
+async def transcribe_endpoint(request: TranscribeRequest):
+    try:
+        # Dodaj zadanie do kolejki
+        celery_result = transcribe_task.delay(request.username, request.filename)
+        # Zwróć ID zadania, aby klient mógł sprawdzać status
+        return {"message": "Zadanie transkrypcji zostało dodane do kolejki", "task_id": celery_result.id}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Błąd przy dodawaniu zadania: {str(e)}")
+
+
+@app.post("/translate")
+async def translate_endpoint(req: TranslateRequest):
+    task = translate_task.delay(
+        req.source_lang,
+        req.target_lang,
+        req.original_filepath
+    )
+    return {"task_id": task.id}
+
+
+@app.get("/translate/result/{task_id}")
+async def get_translate_result(task_id: str):
+    result = AsyncResult(task_id)
+    if result.state == "PENDING":
+        return {"status": "pending"}
+    elif result.state == "STARTED":
+        return {"status": "started"}
+    elif result.state == "SUCCESS":
+        return {"status": "success", "result": result.result}
+    elif result.state == "FAILURE":
+        return {"status": "failure", "error": str(result.result)}
+    else:
+        return {"status": result.state}
+

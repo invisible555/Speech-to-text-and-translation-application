@@ -1,3 +1,10 @@
 import os
-path = "E:/cv-corpus-20.0-2024-12-06-pl/cv-corpus-20.0-2024-12-06/pl/clips/common_voice_pl_20547774.mp3"
-print(os.path.exists(path))
+import asyncio
+from translate import translate_text_async
+
+
+async def function():
+   return await translate_text_async("Hello world what is that","en","pl")
+
+text = asyncio.run(function())
+print(text)
