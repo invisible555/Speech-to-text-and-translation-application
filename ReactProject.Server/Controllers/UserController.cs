@@ -73,10 +73,23 @@ public class UserController : ControllerBase
 
     [Authorize(Roles ="user,admin")]
     [HttpGet("profile")]
-    public IActionResult GetProfile()
+    public async Task<IActionResult> GetProfile()
     {
-        var username = User.Identity?.Name;
-        return Ok(new { username });
+        var login = _userService.GetUserLogin(User);
+        var role = _userService.GetUserRole(User);
+        var email = await _userService.GetUserEmail(User);
+        if (login == null || role == null || email == null)
+            return NotFound();
+
+        var response = new ProfileRequestDTO
+        {
+            Login = login,
+            Role = role,
+            Email = email,
+
+        };
+
+        return Ok(response);
     }
     [Authorize]
     [HttpGet("role")]

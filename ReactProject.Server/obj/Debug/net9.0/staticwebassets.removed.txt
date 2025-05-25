@@ -1,4 +1,2 @@
 C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\wwwroot\UserData\user1\moje1.wav
 C:\Users\Dell\Desktop\repozytoria\projectaspnet\ReactProject.Server\wwwroot\UserData\hello.txt
-C:\Users\niewi\Desktop\ReactProject\ReactProject.Server\wwwroot\UserData\hello.txt
-C:\Users\niewi\Desktop\ReactProject\ReactProject.Server\wwwroot\UserData\user1\moje1.wav

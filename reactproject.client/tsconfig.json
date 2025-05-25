@@ -1,8 +1,8 @@
 {
     
   "compilerOptions": {
-    "target": "es2017",
-    "lib": [ "dom", "es2017" ],
+    "target": "ES2019",
+    "lib": [ "dom", "ES2019" ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

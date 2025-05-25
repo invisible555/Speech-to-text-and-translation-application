@@ -18,5 +18,6 @@ namespace ReactProject.Server.Services
         string? GetUserRole(ClaimsPrincipal user);
         string? GetUserId(ClaimsPrincipal user);
         string? GetUserLogin(ClaimsPrincipal user);
+        Task<string?> GetUserEmail(ClaimsPrincipal user);
     }
 }

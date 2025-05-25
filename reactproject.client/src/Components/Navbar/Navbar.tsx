@@ -24,6 +24,9 @@ const Navbar: React.FC = () => {
       <ul className="menu">
         {/* Zawsze widoczne */}
         <li className="menu-item">
+          <Link to="/" className="menu-link">Home</Link>
+        </li>
+        <li className="menu-item">
           <Link to="/about" className="menu-link">O nas</Link>
         </li>
         <li className="menu-item">
@@ -58,7 +61,7 @@ const Navbar: React.FC = () => {
                 className="menu-button"
                 onClick={() => setSubmenuOpen(!submenuOpen)}
               >
-                {userLogin.username ?? 'Profil'}
+                {userLogin ?? 'Profil'}
               </button>
 
               {submenuOpen && (

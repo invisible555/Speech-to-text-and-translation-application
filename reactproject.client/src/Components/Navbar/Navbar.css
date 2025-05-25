@@ -23,6 +23,7 @@
 
 .menu-item {
   position: relative;
+  
 }
 
 .menu-link,
@@ -60,6 +61,7 @@
 
 .submenu li {
   padding: 0;
+  list-style: none;
 }
 
 .submenu a,

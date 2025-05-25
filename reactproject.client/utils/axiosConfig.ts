@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const axiosInstance = axios.create({
   baseURL: 'https://localhost:7260/api/',
 });
@@ -43,6 +44,7 @@ axiosInstance.interceptors.response.use(
       const refreshToken = getRefreshToken();
       if (!refreshToken) {
         redirectToLogin();
+       
         return Promise.reject(error);
       }
 
@@ -60,7 +62,7 @@ axiosInstance.interceptors.response.use(
 
       try {
         const response = await axios.post('https://localhost:7260/api/User/refresh-access-token', {
-          refreshToken
+          RefreshToken: refreshToken
         });
 
         const newToken = response.data.accessToken;
@@ -70,6 +72,7 @@ axiosInstance.interceptors.response.use(
         originalRequest.headers['Authorization'] = `Bearer ${newToken}`;
         return axiosInstance(originalRequest);
       } catch (err) {
+        
         localStorage.removeItem('token');
         localStorage.removeItem('refreshToken');
         redirectToLogin();

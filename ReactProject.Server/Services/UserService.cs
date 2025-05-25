@@ -169,6 +169,17 @@ namespace ReactProject.Server.Services
         {
             return user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
         }
+        public async Task<string?> GetUserEmail(ClaimsPrincipal user)
+        {
+            var userId = GetUserId(user);
+            if (userId == null)
+                return null;
+            var userFromDatabase = await _userRepository.GetByIdAsync(int.Parse(userId));
+            if (userFromDatabase == null)
+                return null;
+
+            return userFromDatabase.Email;
+        }
 
 
         public async Task SaveUserTokensAsync(int userId, string accessToken, string refreshToken)
