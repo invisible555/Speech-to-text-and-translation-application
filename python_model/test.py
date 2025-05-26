@@ -1,10 +1,8 @@
-import os
-import asyncio
-from translate import translate_text_async
+# python_model/tasks.py
+from celery import Celery
 
+app = Celery("my_app", broker="redis://localhost:6379/0")
 
-async def function():
-   return await translate_text_async("Hello world what is that","en","pl")
-
-text = asyncio.run(function())
-print(text)
+@app.task
+def add(x, y):
+    return x + y

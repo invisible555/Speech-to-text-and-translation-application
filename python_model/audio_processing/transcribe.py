@@ -13,11 +13,10 @@ vosk_model = Model(VOSK_MODEL_PATH)
 class AudioRequest(BaseModel):
     username: str
     filename: str  # tylko nazwa pliku np. "audio.wav"
+    lang: str
 
-def transcribe_audio_sync(req: AudioRequest, lang: str = "pl") -> dict:
-    """
-    Transkrybuje plik WAV mono 16-bit PCM i zapisuje wynik jako plik .txt z dopiskiem języka.
-    """
+def transcribe_audio_sync(req: AudioRequest) -> dict:
+    
     # Pełna ścieżka do pliku audio
     audio_path = os.path.join(STORAGE_PATH, req.username, "files", req.filename)
 
@@ -53,7 +52,7 @@ def transcribe_audio_sync(req: AudioRequest, lang: str = "pl") -> dict:
     os.makedirs(transcription_dir, exist_ok=True)
 
     base_name = os.path.splitext(req.filename)[0]
-    output_filename = f"{base_name}_{lang}.txt"
+    output_filename = f"{base_name}_{req.lang}.txt"
     output_path = os.path.join(transcription_dir, output_filename)
 
     with open(output_path, "w", encoding="utf-8") as f:
