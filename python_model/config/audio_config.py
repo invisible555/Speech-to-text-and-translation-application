@@ -9,5 +9,5 @@ STORAGE_PATH = os.path.abspath(
 )
 
 # Konfiguracja Celery - adres brokera i backendu Redis
-CELERY_BROKER_URL = 'redis://localhost:7000/2'
-CELERY_RESULT_BACKEND = 'redis://localhost:7000/2'
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'

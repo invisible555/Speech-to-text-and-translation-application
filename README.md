@@ -39,10 +39,4 @@ dotnet run
 
 Wymaga ffmpeg
 
-W zakładce należy przejść do python_model i uruchomić:
-
-cd python_model
-
-pip install -r requirements.txt
-
-uvicorn main:app --reload
+uruchomić start.bat, uruchomi serwer python dla fastapi oraz celery dla asynchronicznego kolejkowania zadań
