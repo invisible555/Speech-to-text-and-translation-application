@@ -7,7 +7,7 @@ const AudioFileItem: React.FC<AudioFileItemType> = ({ file }) => {
   const [expanded, setExpanded] = useState(false);
   const [transcript, setTranscript] = useState<string | null>(null);
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
-
+  const [targetLanguage,setTargetLanguage] = useState<string>("");
   const handleClick = async () => {
     if (!expanded) {
       try {
@@ -47,7 +47,13 @@ const AudioFileItem: React.FC<AudioFileItemType> = ({ file }) => {
           ) : (
             <p>Ładowanie pliku audio...</p>
           )}
+          <label>Wybierz język tłumaczenia</label>
+          <select value={targetLanguage} onChange={(e) => setTargetLanguage(e.target.value)}>
+                <option value="pl">Polski</option>
+                <option value="en">Angielski</option>
+            </select>
           <p className="transcript">{transcript ?? 'Ładowanie transkrypcji...'}</p>
+           
         </div>
       )}
     </div>
