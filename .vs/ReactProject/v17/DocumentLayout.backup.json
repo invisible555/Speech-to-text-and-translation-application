@@ -112,7 +112,7 @@
               "RelativeDocumentMoniker": "ReactProject.Server\\Services\\FileService.cs",
               "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Services\\FileService.cs",
               "RelativeToolTip": "ReactProject.Server\\Services\\FileService.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAnwIMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAnwH0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T16:34:54.407Z",
               "EditorCaption": ""
@@ -139,7 +139,8 @@
               "RelativeToolTip": "ReactProject.Server\\Repositories\\UserTokenRepository.cs",
               "ViewState": "AgIAAF4AAAAAAAAAAAArwGwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T16:33:57.653Z"
+              "WhenOpened": "2025-05-25T16:33:57.653Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -199,7 +200,8 @@
               "RelativeToolTip": "ReactProject.Server\\Services\\UserService.cs",
               "ViewState": "AgIAAJ8AAAAAAAAAAAAAALIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T03:21:12.942Z"
+              "WhenOpened": "2025-05-25T03:21:12.942Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
