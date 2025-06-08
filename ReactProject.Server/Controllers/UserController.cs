@@ -21,6 +21,7 @@ public class UserController : ControllerBase
         _env = env;
       
     }
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequestDTO user)
     {
@@ -43,7 +44,7 @@ public class UserController : ControllerBase
             tokenExpiredTime = _user.ExpiryTime,
         });
     }
-
+    [AllowAnonymous]
     [HttpPost("register/user")]
     public async Task<IActionResult> RegisterUser([FromBody] RegisterRequestDTO model)
     {

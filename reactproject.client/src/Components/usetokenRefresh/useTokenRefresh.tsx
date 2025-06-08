@@ -29,40 +29,41 @@ export const useTokenRefresh = () => {
     }
   };
 
-  useEffect(() => {
-    const initializeAuth = async () => {
-      const savedToken = localStorage.getItem('token');
-      const savedRefreshToken = localStorage.getItem('refreshToken');
-      const savedLogin = localStorage.getItem('login');
-   
-      if (savedToken && !isTokenExpired(savedToken)) {
-   
-        const role = decodeRole(savedToken);
-        login(savedToken, savedRefreshToken ?? '', savedLogin ?? '', role);
-      } else if (savedRefreshToken) {
-        // próbuj odświeżyć token
-        try {
-          console.log('axiosInstance baseURL:', axiosInstance.defaults.baseURL)
-          const response = await axiosInstance.post('User/refresh-access-token', {
-            refreshToken: savedRefreshToken,
-          });
-      
-          console.log(response.data)
-          const newToken = response.data.accessToken;
-          const role = decodeRole(newToken);
-          login(newToken, savedRefreshToken, savedLogin ?? '', role);
-        } catch (error) {
-     
-          logout();
-          navigate('/login');
-        }
-      } else {
-     
-        logout();
-        navigate('/login');
-      }
-    };
+ useEffect(() => {
+  const initializeAuth = async () => {
+    const savedToken = localStorage.getItem('token');
+    const savedRefreshToken = localStorage.getItem('refreshToken');
+    const savedLogin = localStorage.getItem('login');
 
-    initializeAuth();
+    if (savedToken && !isTokenExpired(savedToken)) {
+      const role = decodeRole(savedToken);
+      login(savedToken, savedRefreshToken ?? '', savedLogin ?? '', role);
+    } else if (savedRefreshToken) {
+      // próbuj odświeżyć token
+      try {
+        // const response = await axiosInstance.post('User/refresh-access-token', {
+        //   refreshToken: savedRefreshToken,
+        // });
+          const response = await axios.post('User/refresh-access-token', {
+           refreshToken: savedRefreshToken,
+         });
+        const newToken = response.data.accessToken;
+        const role = decodeRole(newToken);
+        login(newToken, savedRefreshToken, savedLogin ?? '', role);
+      } catch (error) {
+      
+        console.error("Refresh token error", error);
+        logout();
+        
+        //setTimeout(() => navigate('/login'), 0);
+      }
+    } else {
+      logout();
+      //setTimeout(() => navigate('/login'), 0);
+    }
+  };
+
+  initializeAuth();
   }, [login, logout, navigate]);
+
 };

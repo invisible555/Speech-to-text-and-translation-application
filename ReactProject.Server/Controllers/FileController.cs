@@ -74,27 +74,26 @@ public class FileController : ControllerBase
     }
     [Authorize]
     [HttpGet("download/transcription/{fileName}")]
-    public async Task<IActionResult> GetTranscriptionAsync([FromRoute] string fileName, [FromQuery] string sourceLang = "en", [FromQuery] string targetLang = "pl")
+    public async Task<IActionResult> GetTranscriptionAsync(
+    [FromRoute] string fileName,
+    [FromQuery] string sourceLang)
     {
         var user = User.Identity?.Name;
         if (string.IsNullOrEmpty(user))
             return Unauthorized();
 
+        // Szukaj transkrypcji po pliku, użytkowniku i języku źródłowym!
         var transcript = await _fileService.GetTranscriptionAsync(fileName, user);
         if (transcript != null)
             return Ok(new { transcript });
 
         try
         {
-            
-      
-
-            // Wywołanie metody z odpowiednimi parametrami
-            await _fileService.GenerateTranscriptionAsync(sourceLang, targetLang, fileName,user);
+            // Tylko generuj transkrypcję, nie tłumaczenie!
+            await _fileService.GenerateTranscriptionAsync(sourceLang, fileName, user);
         }
         catch (Exception ex)
         {
-            // Możesz logować ex.Message
             return StatusCode(500, "Błąd podczas generowania transkrypcji.");
         }
 
@@ -104,6 +103,31 @@ public class FileController : ControllerBase
 
         return Ok(new { transcript });
     }
+    [Authorize]
+    [HttpGet("translate")]
+    public async Task<IActionResult> TranslateAsync(
+    [FromQuery] string fileName,
+    [FromQuery] string sourceLang,
+    [FromQuery] string targetLang)
+    {
+        var user = User.Identity?.Name;
+        if (string.IsNullOrEmpty(user))
+            return Unauthorized();
 
+        var transcript = await _fileService.GetTranscriptionAsync(fileName, user);
+        if (transcript == null)
+            return NotFound("Brak transkrypcji do tłumaczenia.");
 
+        string translation;
+        try
+        {
+            translation = await _fileService.TranslateTextAsync(transcript, sourceLang, targetLang);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "Błąd podczas tłumaczenia.");
+        }
+
+        return Ok(new { translation });
+    }
 }

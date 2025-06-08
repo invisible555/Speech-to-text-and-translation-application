@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axiosInstance from '../../../utils/axiosConfig';
 import RegisterType from './RegisterType';
-
+import axios from 'axios';
 const Register: React.FC<RegisterType> = () => {
     const [email, setEmail] = useState('');
     const [login, setLogin] = useState('');
@@ -34,6 +34,7 @@ const Register: React.FC<RegisterType> = () => {
                 email,
                 password,
             });
+           
 
             if (response.status === 200) {
                 setSuccessMessage('Rejestracja zakończona sukcesem! Proszę się zalogować.');

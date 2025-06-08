@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../Context/AuthContext';
 import axiosInstance from '../../../utils/axiosConfig';
 import { jwtDecode } from 'jwt-decode';
-
+import axios from 'axios';
 const Login = () => {
     const [loginInput, setLoginInput] = useState('');
     const [password, setPassword] = useState('');
@@ -17,10 +17,11 @@ const Login = () => {
         setError('');
 
         try {
-            const response = await axiosInstance.post('User/login', {  
-                login: loginInput,
-                password: password,
-            });
+            // const response = await axiosInstance.post('User/login', {  
+            //     login: loginInput,
+            //     password: password,
+            // });
+            const response = await axios.post(import.meta.env.VITE_API_URL + '/api/User/login', { Login:loginInput,Password:password });
             const data = response.data;
             const token = data.accessToken;
             const refreshToken = data.refreshToken;

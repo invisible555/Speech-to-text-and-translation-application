@@ -40,3 +40,5 @@ dotnet run
 Wymaga ffmpeg
 
 uruchomić start.bat, uruchomi serwer python dla fastapi oraz celery dla asynchronicznego kolejkowania zadań
+
+Celery dla wersji 4.0+ może nie działać na windows, wersja 4.0 najlepiej działa na wersji python 3.8 oraz pip w wersji naprzykład 21.0.0. Aby temu zaradzić można użyć miniconda aby stworzyć nowe środowisko z python 3.10.

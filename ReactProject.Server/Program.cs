@@ -21,7 +21,7 @@ namespace ReactProject.Server
             // Controllers
             builder.Services.AddHttpClient("TranscriptionApi", client =>
             {
-                client.BaseAddress = new Uri("http://127.0.0.1:8000/");   // ← Twój stały host
+                client.BaseAddress = new Uri("https://python-api.internal.lemonwave-1b689309.westeurope.azurecontainerapps.io");   // ← Twój stały host
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
             });
 
@@ -62,21 +62,23 @@ namespace ReactProject.Server
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            // CORS
-            builder.Services.AddCors(options =>
-            {
-                options.AddPolicy("AllowFrontend",
-                    policy =>
-                    {
-                        policy
-                            .WithOrigins("https://localhost:55071") // Twój frontend
-                            .AllowAnyHeader()
-                            .AllowAnyMethod()
-                            .AllowCredentials(); // Jeśli używasz cookies
-                    });
-            });
+  
 
-         
+            // CORS
+             builder.Services.AddCors(options =>
+             {
+                 options.AddPolicy("AllowFrontend",
+                     policy =>
+                     {
+                         policy
+                             .WithOrigins("https://frontend.lemonwave-1b689309.westeurope.azurecontainerapps.io","http://localhost:3000") // Twój frontend
+                             .AllowAnyHeader()
+                             .AllowAnyMethod();
+
+                     });
+             });
+
+
 
 
             // Custom model validation response
@@ -129,9 +131,10 @@ namespace ReactProject.Server
                 app.UseSwagger(); // <-- Dodajemy Swagger do środowiska deweloperskiego
                 app.UseSwaggerUI(); // <-- Dodajemy UI Swaggera
             }
-
+            app.Urls.Add("http://*:5000");
             app.UseHttpsRedirection();
             app.UseCors("AllowFrontend");
+            
              // CORS
             app.UseAuthentication();// JWT
             app.UseMiddleware<TokenRevocationMiddleware>();
@@ -143,8 +146,14 @@ namespace ReactProject.Server
             app.MapControllers();      // API endpoints
             app.MapFallbackToFile("/index.html"); // SPA fallback
             app.UseStaticFiles();
-
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                db.Database.Migrate(); // lub EnsureCreated() jeśli nie używasz migracji
+                   
+            }
             app.Run();
+            
         }
     }
 }

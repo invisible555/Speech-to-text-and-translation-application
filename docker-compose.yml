@@ -1,0 +1,75 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./ReactProject.Server
+      dockerfile: Dockerfile
+    image: reactprojectdocker.azurecr.io/backend:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db,1433;Database=ReactProjectDb;User=sa;Password=Dhjrfhc_123;Encrypt=False
+    depends_on:
+      - db
+    volumes:
+      - /mnt/c/Users/niewi/Desktop/ReactProject/ReactProject.Server/App_Data/UserFiles:/ReactProject.Server/App_Data/UserFiles
+
+  frontend:
+    build:
+      context: ./reactproject.client
+      dockerfile: Dockerfile
+    image: reactprojectdocker.azurecr.io/frontend:latest
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Dhjrfhc_123
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  python_api:
+    build:
+      context: ./python_model
+    image: reactprojectdocker.azurecr.io/python:latest
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    working_dir: /app
+    volumes:
+      - ./python_model:/app
+      - /mnt/c/Users/niewi/Desktop/ReactProject/ReactProject.Server/App_Data/UserFiles:/ReactProject.Server/App_Data/UserFiles
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+
+  celery_worker:
+    build:
+      context: ./python_model
+    image: reactprojectdocker.azurecr.io/celery_worker:latest
+    command: celery -A worker.celery_app worker --pool=solo -Q transcription --loglevel=info
+    working_dir: /app
+    volumes:
+      - ./python_model:/app
+      - /mnt/c/Users/niewi/Desktop/ReactProject/ReactProject.Server/App_Data/UserFiles:/ReactProject.Server/App_Data/UserFiles
+    depends_on:
+      - python_api
+      - redis
+
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    ports:
+      - "5001:5000"
+    restart: unless-stopped

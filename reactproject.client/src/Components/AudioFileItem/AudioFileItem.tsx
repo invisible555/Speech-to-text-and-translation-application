@@ -7,12 +7,16 @@ const AudioFileItem: React.FC<AudioFileItemType> = ({ file }) => {
   const [expanded, setExpanded] = useState(false);
   const [transcript, setTranscript] = useState<string | null>(null);
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
-  const [targetLanguage,setTargetLanguage] = useState<string>("");
+  const [sourceLanguage, setSourceLanguage] = useState<string>('pl');
+  const [translatedText, setTranslatedText] = useState<string | null>(null);
+  const [isTranslating, setIsTranslating] = useState<boolean>(false);
+
   const handleClick = async () => {
     if (!expanded) {
       try {
-        // 📥 1. Pobranie transkrypcji (z automatycznym generowaniem po stronie backendu)
-        const transcriptResponse = await axiosInstance.get(`File/download/transcription/${file.fileName}`);
+        const transcriptResponse = await axiosInstance.get(`File/download/transcription/${file.fileName}`, {
+          params: { language: sourceLanguage }
+        });
         setTranscript(transcriptResponse.data.transcript);
       } catch (error) {
         console.error('Błąd podczas ładowania transkrypcji:', error);
@@ -20,7 +24,6 @@ const AudioFileItem: React.FC<AudioFileItemType> = ({ file }) => {
       }
 
       try {
-        // 🎵 2. Pobranie pliku audio jako blob
         const audioResponse = await axiosInstance.get(`File/download/file/${file.fileName}`, {
           responseType: 'blob',
         });
@@ -35,11 +38,42 @@ const AudioFileItem: React.FC<AudioFileItemType> = ({ file }) => {
     setExpanded(!expanded);
   };
 
+  const handleTranslate = async (targetLang: string) => {
+    setIsTranslating(true);
+    setTranslatedText(null);
+    try {
+      const response = await axiosInstance.get(`Translate`, {
+        params: {
+          fileName: file.fileName,
+          sourceLang: sourceLanguage,
+          targetLang: targetLang
+        }
+      });
+      setTranslatedText(response.data.translation);
+    } catch (error) {
+      console.error('Błąd tłumaczenia:', error);
+      setTranslatedText('Nie udało się przetłumaczyć.');
+    } finally {
+      setIsTranslating(false);
+    }
+  };
+
   return (
     <div className="audio-file-item">
+      <label>Wybierz język źródłowy:</label>
+      <select
+        value={sourceLanguage}
+        onChange={(e) => setSourceLanguage(e.target.value)}
+        disabled={expanded} // blokujemy zmianę po załadowaniu
+      >
+        <option value="pl">Polski</option>
+        <option value="en">Angielski</option>
+      </select>
+
       <div className="audio-file-name" onClick={handleClick}>
         {file.fileName}
       </div>
+
       {expanded && (
         <div className="audio-file-details">
           {audioSrc ? (
@@ -47,13 +81,31 @@ const AudioFileItem: React.FC<AudioFileItemType> = ({ file }) => {
           ) : (
             <p>Ładowanie pliku audio...</p>
           )}
-          <label>Wybierz język tłumaczenia</label>
-          <select value={targetLanguage} onChange={(e) => setTargetLanguage(e.target.value)}>
-                <option value="pl">Polski</option>
-                <option value="en">Angielski</option>
+
+          <p className="transcript">
+            <strong>Transkrypcja:</strong><br />
+            {transcript ?? 'Ładowanie transkrypcji...'}
+          </p>
+
+          <div className="translation-section">
+            <label>Przetłumacz na:</label>
+            <select onChange={e => handleTranslate(e.target.value)}>
+              <option value="" disabled>Wybierz język docelowy</option>
+              <option value="fr">Francuski</option>
+              <option value="de">Niemiecki</option>
+              <option value="en">Angielski</option>
+              <option value="es">Hiszpański</option>
             </select>
-          <p className="transcript">{transcript ?? 'Ładowanie transkrypcji...'}</p>
-           
+          </div>
+
+          {isTranslating ? (
+            <p>Tłumaczenie...</p>
+          ) : translatedText && (
+            <p className="translated-text">
+              <strong>Tłumaczenie:</strong><br />
+              {translatedText}
+            </p>
+          )}
         </div>
       )}
     </div>

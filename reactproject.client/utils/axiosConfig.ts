@@ -1,10 +1,10 @@
 import axios from 'axios';
 
+console.log('API URL:', import.meta.env.VITE_API_URL);
 
 const axiosInstance = axios.create({
-  baseURL: 'https://localhost:7260/api/',
+  baseURL: import.meta.env.VITE_API_URL+"/api/",
 });
-
 let isRefreshing = false;
 let refreshSubscribers: ((token: string) => void)[] = [];
 
@@ -43,7 +43,7 @@ axiosInstance.interceptors.response.use(
     if (error.response?.status === 401 && !originalRequest._retry) {
       const refreshToken = getRefreshToken();
       if (!refreshToken) {
-        redirectToLogin();
+        //redirectToLogin();
        
         return Promise.reject(error);
       }
@@ -61,7 +61,7 @@ axiosInstance.interceptors.response.use(
       isRefreshing = true;
 
       try {
-        const response = await axios.post('https://localhost:7260/api/User/refresh-access-token', {
+        const response = await axiosInstance.post('User/refresh-access-token', {
           RefreshToken: refreshToken
         });
 
@@ -75,7 +75,7 @@ axiosInstance.interceptors.response.use(
         
         localStorage.removeItem('token');
         localStorage.removeItem('refreshToken');
-        redirectToLogin();
+        //redirectToLogin();
         return Promise.reject(err);
       } finally {
         isRefreshing = false;

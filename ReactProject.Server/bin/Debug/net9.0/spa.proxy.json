@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:55071",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\..\\reactproject.client",
+"WorkingDirectory": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\..\\reactproject.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

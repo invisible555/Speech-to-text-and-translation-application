@@ -1,17 +1,15 @@
 @echo off
-REM start.bat - uruchomienie FastAPI i Celery z poprawnym katalogiem roboczym
+REM start.bat - uruchamianie FastAPI i Celery przez środowisko Anaconda
 
-REM Ustaw zmienną środowiskową PYTHONPATH na bieżący katalog
-set PYTHONPATH=%cd%
+set ENV_NAME=reactproject
 
-echo Uruchamiam FastAPI na porcie 8000...
-start cmd /k "uvicorn python_model.main:app --reload"
+REM Aktywuj środowisko Conda i uruchom FastAPI
+start cmd /k "call C:\Users\niewi\miniconda3\Scripts\activate.bat %ENV_NAME% && uvicorn python_model.main:app --reload"
 
-REM Poczekaj chwilę, aby FastAPI zdążyło się uruchomić
+REM Poczekaj 3 sekundy
 timeout /t 3 /nobreak >nul
 
-echo Uruchamiam Celery worker...
-start cmd /k "celery -A python_model.worker.celery_app worker --pool=solo -Q transcription --loglevel=info"
+REM Aktywuj środowisko Conda i uruchom Celery
+start cmd /k "call C:\Users\niewi\miniconda3\Scripts\activate.bat %ENV_NAME% && celery -A python_model.worker.celery_app worker --pool=solo -Q transcription --loglevel=info"
 
-echo Wszystko uruchomione.
 pause

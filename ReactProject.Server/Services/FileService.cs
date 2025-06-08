@@ -122,17 +122,16 @@ public class FileService : IFileService
             .ToList();
     }
 
-    public async Task GenerateTranscriptionAsync(string sourceLang, string targetLang, string originalFilepath,string user)
+    public async Task GenerateTranscriptionAsync(string sourceLang, string fileName, string user)
     {
-        var fullPath = Path.Combine(_storagePath, user, originalFilepath);
-        if (string.IsNullOrWhiteSpace(originalFilepath) || !File.Exists(originalFilepath))
-            throw new FileNotFoundException("Plik do transkrypcji nie istnieje.", originalFilepath);
+        var fullPath = Path.Combine(_storagePath, user, fileName);
+        if (string.IsNullOrWhiteSpace(fileName) || !File.Exists(fullPath))
+            throw new FileNotFoundException("Plik do transkrypcji nie istnieje.", fullPath);
 
         var requestObj = new
         {
             source_lang = sourceLang,
-            target_lang = targetLang,
-            original_filepath = originalFilepath
+            original_filepath = fullPath
         };
 
         var jsonContent = new StringContent(
@@ -148,6 +147,35 @@ public class FileService : IFileService
             var error = await response.Content.ReadAsStringAsync();
             throw new Exception($"Błąd transkrypcji: {error}");
         }
+    }
+
+    public async Task<string> TranslateTextAsync(string text, string sourceLang, string targetLang)
+    {
+        var requestObj = new
+        {
+            q = text,
+            source = sourceLang,
+            target = targetLang,
+            format = "text"
+        };
+
+        var jsonContent = new StringContent(
+            JsonSerializer.Serialize(requestObj),
+            Encoding.UTF8,
+            "application/json"
+        );
+
+        var response = await _client.PostAsync("translate", jsonContent);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            var error = await response.Content.ReadAsStringAsync();
+            throw new Exception($"Błąd tłumaczenia: {error}");
+        }
+
+        var resultJson = await response.Content.ReadAsStringAsync();
+        using var doc = JsonDocument.Parse(resultJson);
+        return doc.RootElement.GetProperty("translatedText").GetString() ?? "";
     }
 
     public async Task ConvertFileToWav(string filepath, string login)
