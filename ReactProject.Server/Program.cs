@@ -71,7 +71,7 @@ namespace ReactProject.Server
                      policy =>
                      {
                          policy
-                             .WithOrigins("https://frontend.lemonwave-1b689309.westeurope.azurecontainerapps.io","http://localhost:3000") // Twój frontend
+                             .WithOrigins("https://frontend.lemonwave-1b689309.westeurope.azurecontainerapps.io","http://localhost:3000", "https://localhost:55071", "http://localhost:55071") // Twój frontend
                              .AllowAnyHeader()
                              .AllowAnyMethod();
 
@@ -132,7 +132,10 @@ namespace ReactProject.Server
                 app.UseSwaggerUI(); // <-- Dodajemy UI Swaggera
             }
             app.Urls.Add("http://*:5000");
-            app.UseHttpsRedirection();
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseHttpsRedirection();
+            }
             app.UseCors("AllowFrontend");
             
              // CORS

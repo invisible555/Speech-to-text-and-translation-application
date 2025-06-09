@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\niewi\\Desktop\\ReactProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\dto\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\dto\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\dto\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,45 +103,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ReactProject.Server\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ReactProject.Server\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-09T15:36:10.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "ReactProject.Server\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\AppDbContext.cs",
+              "RelativeToolTip": "ReactProject.Server\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T15:32:44.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "RegisterRequestDTO.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\RegisterRequestDTO.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\DTO\\RegisterRequestDTO.cs",
               "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\RegisterRequestDTO.cs",
               "RelativeToolTip": "ReactProject.Server\\DTO\\RegisterRequestDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T14:38:44.912Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Program.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Program.cs",
               "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Program.cs",
               "RelativeToolTip": "ReactProject.Server\\Program.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwJ8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAADwv0kAAADPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T12:28:48.124Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\appsettings.json",
               "RelativeDocumentMoniker": "ReactProject.Server\\appsettings.json",
               "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\appsettings.json",
               "RelativeToolTip": "ReactProject.Server\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-06-04T12:06:54.97Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Dockerfile",
               "RelativeDocumentMoniker": "ReactProject.Server\\Dockerfile",
@@ -141,12 +175,11 @@
               "RelativeToolTip": "ReactProject.Server\\Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-04T11:35:00.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T11:35:00.132Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "reactproject.client.esproj",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\reactproject.client.esproj",
               "RelativeDocumentMoniker": "reactproject.client\\reactproject.client.esproj",
@@ -158,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ReactProject.Server.csproj",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj",
               "RelativeDocumentMoniker": "ReactProject.Server\\ReactProject.Server.csproj",
@@ -170,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "IFileService.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\IFileService.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Services\\IFileService.cs",
@@ -178,12 +211,11 @@
               "RelativeToolTip": "ReactProject.Server\\Services\\IFileService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T19:33:32.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T19:33:32.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "IFileRepository.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\IFileRepository.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Repositories\\IFileRepository.cs",
@@ -195,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "TranslateRequestDTO.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\TranslateRequestDTO.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\DTO\\TranslateRequestDTO.cs",
@@ -207,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "FileService.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\FileService.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Services\\FileService.cs",
@@ -215,12 +247,11 @@
               "RelativeToolTip": "ReactProject.Server\\Services\\FileService.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAAArwG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T16:34:54.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T16:34:54.407Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "FileController.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Controllers\\FileController.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Controllers\\FileController.cs",
@@ -228,12 +259,11 @@
               "RelativeToolTip": "ReactProject.Server\\Controllers\\FileController.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAA1wDMAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T16:33:57.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T16:33:57.635Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "UserTokenRepository.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\UserTokenRepository.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Repositories\\UserTokenRepository.cs",
@@ -246,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "FileRepository.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\FileRepository.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Repositories\\FileRepository.cs",
@@ -258,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "LoginRequestDTO.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\LoginRequestDTO.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\DTO\\LoginRequestDTO.cs",
@@ -266,12 +296,11 @@
               "RelativeToolTip": "ReactProject.Server\\DTO\\LoginRequestDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T04:04:18.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T04:04:18.263Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\IUserService.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Services\\IUserService.cs",
@@ -283,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ProfileRequestDTO.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\ProfileRequestDTO.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\DTO\\ProfileRequestDTO.cs",
@@ -295,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Services\\UserService.cs",
@@ -308,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Controllers\\UserController.cs",
@@ -316,12 +345,11 @@
               "RelativeToolTip": "ReactProject.Server\\Controllers\\UserController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T03:19:32.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T03:19:32.666Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Repositories\\UserRepository.cs",
@@ -333,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Entities\\User.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Entities\\User.cs",
