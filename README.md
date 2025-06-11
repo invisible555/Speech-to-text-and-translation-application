@@ -15,5 +15,7 @@
 
 Instrukcja uruchomienia projektu
 
+
 Wymaga uruchomionego docker desktop
-Aby uruchomić projekt należy wpisać docker-compose up
+Aby uruchomić projekt należy wpisać docker compose up --build za pierwszym razem i przy aktualizacji projektu.
+następnie wystarczy docker compose up.
