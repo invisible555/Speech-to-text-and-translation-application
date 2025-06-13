@@ -1,6 +1,0 @@
-każda transkrypcja do własnego folderu
-mapowanie języków angielski - en itp.
-lepsze stylowanie
-wypełnienie "O nas", Kontakt
-tłumaczenie - plik wgrany nazwa _original, reszta tłumaczy na podstawie original
-dostep poprzez baze danych nie folder
