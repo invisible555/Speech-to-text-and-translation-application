@@ -1,93 +1,93 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\niewi\\Desktop\\ReactProject\\",
+  "WorkspaceRootPath": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\dto\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\dto\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\dto\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\dto\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\dto\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\dto\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\services\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\services\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\services\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\reactproject.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\reactproject.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\reactproject.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\repositories\\ifilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\repositories\\ifilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\repositories\\ifilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.client\\reactproject.client.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.client\\reactproject.client.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{E9B696C2-EC35-455D-9ACC-77F05488ECC0}|reactproject.client\\reactproject.client.esproj|solutionrelative:reactproject.client\\reactproject.client.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\dto\\translaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\dto\\translaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\dto\\translaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\repositories\\usertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\repositories\\usertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\repositories\\usertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\repositories\\filerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\repositories\\filerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\repositories\\filerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\dto\\profilerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\dto\\profilerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\dto\\profilerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\niewi\\desktop\\reactproject\\reactproject.server\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|c:\\users\\dell\\desktop\\repozytoria\\projectaspnet\\reactproject.server\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A712AA6-8577-4A66-8593-2E81F3BE21F1}|ReactProject.Server\\ReactProject.Server.csproj|solutionrelative:reactproject.server\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -98,15 +98,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ReactProject.Server\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Properties\\launchSettings.json",
               "RelativeToolTip": "ReactProject.Server\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -117,61 +117,57 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\AppDbContext.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\AppDbContext.cs",
               "RelativeToolTip": "ReactProject.Server\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T15:32:44.251Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-09T15:32:44.251Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "RegisterRequestDTO.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\RegisterRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\DTO\\RegisterRequestDTO.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\DTO\\RegisterRequestDTO.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\RegisterRequestDTO.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\DTO\\RegisterRequestDTO.cs",
               "RelativeToolTip": "ReactProject.Server\\DTO\\RegisterRequestDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T14:38:44.912Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Program.cs",
-              "RelativeDocumentMoniker": "ReactProject.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Program.cs",
-              "RelativeToolTip": "ReactProject.Server\\Program.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAwwH4AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:28:48.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T14:38:44.912Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Program.cs",
+              "RelativeDocumentMoniker": "ReactProject.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Program.cs",
+              "RelativeToolTip": "ReactProject.Server\\Program.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAADwv0kAAADPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T12:28:48.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\appsettings.json",
               "RelativeDocumentMoniker": "ReactProject.Server\\appsettings.json",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\appsettings.json",
               "RelativeToolTip": "ReactProject.Server\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-04T12:06:54.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T12:06:54.97Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Dockerfile",
               "RelativeDocumentMoniker": "ReactProject.Server\\Dockerfile",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Dockerfile",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Dockerfile",
               "RelativeToolTip": "ReactProject.Server\\Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -181,9 +177,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "reactproject.client.esproj",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\reactproject.client.esproj",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\reactproject.client.esproj",
               "RelativeDocumentMoniker": "reactproject.client\\reactproject.client.esproj",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\reactproject.client\\reactproject.client.esproj",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\reactproject.client\\reactproject.client.esproj",
               "RelativeToolTip": "reactproject.client\\reactproject.client.esproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -193,9 +189,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "ReactProject.Server.csproj",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\ReactProject.Server.csproj",
               "RelativeDocumentMoniker": "ReactProject.Server\\ReactProject.Server.csproj",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\ReactProject.Server.csproj",
               "RelativeToolTip": "ReactProject.Server\\ReactProject.Server.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -205,9 +201,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "IFileService.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\IFileService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Services\\IFileService.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Services\\IFileService.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\IFileService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Services\\IFileService.cs",
               "RelativeToolTip": "ReactProject.Server\\Services\\IFileService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -217,9 +213,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "IFileRepository.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\IFileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Repositories\\IFileRepository.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Repositories\\IFileRepository.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\IFileRepository.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Repositories\\IFileRepository.cs",
               "RelativeToolTip": "ReactProject.Server\\Repositories\\IFileRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -229,9 +225,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "TranslateRequestDTO.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\TranslateRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\DTO\\TranslateRequestDTO.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\DTO\\TranslateRequestDTO.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\TranslateRequestDTO.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\DTO\\TranslateRequestDTO.cs",
               "RelativeToolTip": "ReactProject.Server\\DTO\\TranslateRequestDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -241,9 +237,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "FileService.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\FileService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Services\\FileService.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Services\\FileService.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\FileService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Services\\FileService.cs",
               "RelativeToolTip": "ReactProject.Server\\Services\\FileService.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAAArwG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -253,9 +249,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "FileController.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Controllers\\FileController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Controllers\\FileController.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Controllers\\FileController.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Controllers\\FileController.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Controllers\\FileController.cs",
               "RelativeToolTip": "ReactProject.Server\\Controllers\\FileController.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAA1wDMAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -265,22 +261,21 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "UserTokenRepository.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\UserTokenRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Repositories\\UserTokenRepository.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Repositories\\UserTokenRepository.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\UserTokenRepository.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Repositories\\UserTokenRepository.cs",
               "RelativeToolTip": "ReactProject.Server\\Repositories\\UserTokenRepository.cs",
               "ViewState": "AgIAAF4AAAAAAAAAAAArwGwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T16:33:57.653Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T16:33:57.653Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "FileRepository.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\FileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Repositories\\FileRepository.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Repositories\\FileRepository.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\FileRepository.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Repositories\\FileRepository.cs",
               "RelativeToolTip": "ReactProject.Server\\Repositories\\FileRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -290,9 +285,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "LoginRequestDTO.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\LoginRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\DTO\\LoginRequestDTO.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\DTO\\LoginRequestDTO.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\LoginRequestDTO.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\DTO\\LoginRequestDTO.cs",
               "RelativeToolTip": "ReactProject.Server\\DTO\\LoginRequestDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -302,9 +297,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Services\\IUserService.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Services\\IUserService.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\IUserService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Services\\IUserService.cs",
               "RelativeToolTip": "ReactProject.Server\\Services\\IUserService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAA0wBQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -314,9 +309,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "ProfileRequestDTO.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\ProfileRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\DTO\\ProfileRequestDTO.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\DTO\\ProfileRequestDTO.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\DTO\\ProfileRequestDTO.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\DTO\\ProfileRequestDTO.cs",
               "RelativeToolTip": "ReactProject.Server\\DTO\\ProfileRequestDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -326,22 +321,21 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Services\\UserService.cs",
               "RelativeToolTip": "ReactProject.Server\\Services\\UserService.cs",
               "ViewState": "AgIAAJwAAAAAAAAAAIBJwLIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T03:21:12.942Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T03:21:12.942Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Controllers\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Controllers\\UserController.cs",
               "RelativeToolTip": "ReactProject.Server\\Controllers\\UserController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -351,9 +345,9 @@
               "$type": "Document",
               "DocumentIndex": 21,
               "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "ReactProject.Server\\Repositories\\UserRepository.cs",
               "ViewState": "AgIAABkAAAAAAAA+qzs4wB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -363,9 +357,9 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Entities\\User.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Entities\\User.cs",
               "RelativeDocumentMoniker": "ReactProject.Server\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\Entities\\User.cs",
               "RelativeToolTip": "ReactProject.Server\\Entities\\User.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAIBQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

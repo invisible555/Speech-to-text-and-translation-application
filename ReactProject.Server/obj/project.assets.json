@@ -7903,23 +7903,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\niewi\\.nuget\\packages\\": {},
-    "E:\\visual studio bonus\\NuGetPackages": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\ReactProject.Server.csproj",
       "projectName": "ReactProject.Server",
-      "projectPath": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\ReactProject.Server.csproj",
-      "packagesPath": "C:\\Users\\niewi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\niewi\\Desktop\\ReactProject\\ReactProject.Server\\obj\\",
+      "projectPath": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\ReactProject.Server.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\Desktop\\repozytoria\\projectaspnet\\ReactProject.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\visual studio bonus\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\niewi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8007,7 +8007,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -8016,7 +8016,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "ReactProject.Server jest zależny od Microsoft.AspNetCore.SpaProxy (>= 9.0.0-preview.4.24269.2), ale Microsoft.AspNetCore.SpaProxy 9.0.0-preview.4.24269.2 nie został znaleziony. Zamiast tego Microsoft.AspNetCore.SpaProxy 9.0.0-preview.5.24306.11 został rozwiązany.",
+      "message": "ReactProject.Server depends on Microsoft.AspNetCore.SpaProxy (>= 9.0.0-preview.4.24269.2) but Microsoft.AspNetCore.SpaProxy 9.0.0-preview.4.24269.2 was not found. Microsoft.AspNetCore.SpaProxy 9.0.0-preview.5.24306.11 was resolved instead.",
       "libraryId": "Microsoft.AspNetCore.SpaProxy",
       "targetGraphs": [
         "net9.0"
